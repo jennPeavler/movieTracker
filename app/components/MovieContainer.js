@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { addFavoriteMovie } from '../actions'
-import FavoriteMovie from '../components/FavoriteMovie'
+import FavoriteMovie from './Favorites'
 import MovieList from './MovieList'
 
 const mapStateToProps = (state) => {
@@ -15,4 +15,4 @@ const mapDispatchToProps=(dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTodoForm)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList)
