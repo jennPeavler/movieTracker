@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
-
+import AppContainer from './components/App/AppContainer';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
@@ -13,9 +13,15 @@ import promiseMiddleware from 'redux-promise';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const store = createStore(rootReducer, devTools,applyMiddleware(promiseMiddleware));
+import thunk from 'redux-thunk'
+
+
+///
 
 ReactDOM.render(<Provider store={store}>
                   <Router >
-                    <Route to='/' component={App}/>
+                    <Route to='/' component={AppContainer}/>
                   </Router>
                 </Provider>, document.getElementById('main'))
+
+
