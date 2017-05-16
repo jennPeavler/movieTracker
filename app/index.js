@@ -7,22 +7,21 @@ import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Route, Link, Switch} from 'react-router-dom'
-import promiseMiddleware from 'redux-promise'
-import createHistory from 'history/createBrowserHistory'
-import thunk from 'redux-thunk'
-
+import promiseMiddleware from 'redux-promise';
 
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = createStore(rootReducer, devTools, applyMiddleware(...middleware))
-const middleware = [routerMiddleware(history), thunk]
-const history = createHistory();
+
+const store = createStore(rootReducer, devTools,applyMiddleware(promiseMiddleware));
+import thunk from 'redux-thunk'
+
+
+///
 
 ReactDOM.render(<Provider store={store}>
-                  <ConnectedRouter history={history}>
+                  <Router >
                     <Route to='/' component={AppContainer}/>
-                  </ConnectedRouter>
+                  </Router>
                 </Provider>, document.getElementById('main'))
 
 
-// <Router history={history}>
