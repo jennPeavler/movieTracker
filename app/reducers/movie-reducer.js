@@ -1,9 +1,8 @@
 const movieReducer = (state=[], action) => {
-  console.log("woof")
 
   switch(action.type){
     case'FETCH_REQUEST':
-    return state
+    return action.payload
 
     default:
     return state
