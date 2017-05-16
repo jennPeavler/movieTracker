@@ -3,7 +3,18 @@ import axios from 'axios'
 const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
 
   function fetchMovieRequest(){
-   return axios.get(url)
+    let data = "";
+    fetch(url)
+    .then(response => response.json())
+    .then(res=> {
+      console.log(res.results, ' response')
+      return res.results
+    })
+    // console.log(data)
+    return {
+      type:"BANANAS",
+      payload:data
+    }
 }
 
 
@@ -14,8 +25,13 @@ const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4
       payload:response
     }
   })
-
 }
+
+export default fetchMovieRequest
+
+
+
+// return
 
 //  function fetchPostsSuccess(payload) {
 //   return {
