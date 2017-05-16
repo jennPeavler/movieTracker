@@ -4,23 +4,22 @@ import MovieCard from './MovieCard'
 const MovieList = (props) => {
 
 
-    let fuck = props.movies?
+    let renderCard = props.movies ?
     props.movies.map(movie=>{
-      return <div>sdfhkasfj</div>
-    })
-     : <div>fffffffff</div>
-
-
-
-
-
-
+      return (
+        <div className="card">
+        <img src = {`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
+        </div>
+      )
+})
+      :
+      <div>loading</div>
 
 
   return(
     <section>
     {
-      fuck
+      renderCard
     }
 
     </section>
