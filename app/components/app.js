@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieList from './MovieList'
+import MovieContainer from './MovieContainer'
 import Favorites from './Favorites'
 import Login from './Login'
 import {Route, Link, Switch} from 'react-router-dom'
@@ -14,24 +14,19 @@ class App extends Component {
   }
 
   componentDidMount(){
-     let that = this
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
-    function fetchMovieRequest(){
+    let fetchMovieRequest = ()=>{
       let data = "";
        fetch(url)
       .then(response => response.json())
       .then(res=> {
-        console.log(res)
-       that.props.handleMovieFetch(res)
-       return res
+       this.props.handleMovieFetch(res.results)
 
       })
     }
     fetchMovieRequest()
   }
 
-    // console.log(this.props);
-// this.props.handleMovieFetch()
 
 
   render() {
@@ -42,7 +37,7 @@ class App extends Component {
         <Switch>
           <Route path='/favorites' component={Favorites} />
           <Route path='/login' component={Login} />
-          <Route path='/' component={MovieList} />
+          <Route path='/' component={MovieContainer} />
 
         </Switch>
         {this.props.children}
@@ -60,7 +55,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
 return{
-    handleMovieFetch:(payload)=>{
+    handleMovieFetch: (payload)=>{
       dispatch(fetchMovieRequest(payload))
   }
   }

@@ -1,18 +1,12 @@
 import { connect } from 'react-redux'
 // import { addFavoriteMovie } from '../actions'
-import FavoriteMovie from './Favorites'
+// import FavoriteMovie from './Favorites'
 import MovieList from './MovieList'
 
-// const mapStateToProps = (state) => {
-//   return { favorites: state.favories }
-// }
-//
-// const mapDispatchToProps=(dispatch) => {
-//   return {
-//     handleSubmit: (text, id) => {
-//       dispatch(addTodo(text, id))
-//     }
-//   }
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(MovieList)
+const mapStateToProps = (state) => {
+  return { movies: state.movieReducer }
+}
+
+
+
+export default connect(mapStateToProps)(MovieList)

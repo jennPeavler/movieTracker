@@ -1,9 +1,28 @@
 import React from 'react'
 import MovieCard from './MovieCard'
-const MovieList = () => {
+
+const MovieList = (props) => {
+
+
+    let fuck = props.movies?
+    props.movies.map(movie=>{
+      return <div>sdfhkasfj</div>
+    })
+     : <div>fffffffff</div>
+
+
+
+
+
+
+
+
   return(
     <section>
-      <MovieCard />
+    {
+      fuck
+    }
+
     </section>
   )
 }
