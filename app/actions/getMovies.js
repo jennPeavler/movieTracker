@@ -4,13 +4,12 @@ const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4
 
   function fetchMovieRequest(){
     let data = "";
-    fetch(url)
+     fetch(url)
     .then(response => response.json())
     .then(res=> {
-      console.log(res.results, ' response')
-      return res.results
+      data = res.results
     })
-    // console.log(data)
+    console.log(data)
     return {
       type:"BANANAS",
       payload:data
