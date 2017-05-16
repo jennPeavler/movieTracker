@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieList from './MovieList'
 
 export default class App extends Component {
   constructor() {
@@ -9,6 +10,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Movie Watcher</h1>
+        <MovieList />
         {this.props.children}
       </div>
     )

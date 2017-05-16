@@ -2,4 +2,4 @@ const usersReducer = (state=[], action) => {
   return state
 }
 
-export default  usersReducer
+export default usersReducer

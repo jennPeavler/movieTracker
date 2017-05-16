@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { addFavoriteMovie } from '../actions'
 import FavoriteMovie from '../components/FavoriteMovie'
+import MovieList from './MovieList'
 
 const mapStateToProps = (state) => {
   return { favorites: state.favories }
