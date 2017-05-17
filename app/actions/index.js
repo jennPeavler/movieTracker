@@ -13,5 +13,3 @@ export function toggleMovie(id){
       payload:response
     }
   }
-
-  // function
