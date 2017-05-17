@@ -19,10 +19,12 @@
   "dependencies": {
     "bluebird": "^3.3.4",
     "body-parser": "^1.16.0",
+    "enzyme": "^2.8.2",
     "express": "^4.14.0",
     "express-cors": "0.0.3",
     "pg-promise": "^3.2.3",
     "react": "^15.4.2",
+    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.1",
