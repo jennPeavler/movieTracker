@@ -32,6 +32,7 @@ class Signup extends Component {
   }
 
   render(){
+    console.log(this.props)
     return(
       <section className = "signup-page">
         <input

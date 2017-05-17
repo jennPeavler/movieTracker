@@ -14,8 +14,7 @@ export const fetchMovieRequest = (response) => {
   }
 }
 
-export const toggleUser = (id) =>{
-  console.log("HIT")
+export const toggleUser = (id) =>{  
   return{
     type: 'USER_TOGGLE',
     id

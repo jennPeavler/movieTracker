@@ -8,7 +8,7 @@ export const NavBar = (props) => {
     <div>
       <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink>
       <NavLink className="nav-link" activeClassName='selected' to={'/favorites'}> Favorites </NavLink>
-      <NavLink className="nav-link" activeClassName='selected' to={'/favorites'}> Logout </NavLink>
+      <NavLink className="nav-link" activeClassName='selected' to={'/'}> Logout </NavLink>
     </div> :
     <div>
       <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink>

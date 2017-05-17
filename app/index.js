@@ -8,7 +8,10 @@ import rootReducer from './reducers'
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Route, Link, Switch} from 'react-router-dom'
 import promiseMiddleware from 'redux-promise';
+import createHistory from 'history/createBrowserHistory'
 
+
+const history = createHistory()
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
@@ -18,7 +21,7 @@ const store = createStore(rootReducer, devTools,applyMiddleware(promiseMiddlewar
 
 
 ReactDOM.render(<Provider store={store}>
-                  <Router >
+                  <Router history={history} >
                     <Route to='/' component={AppContainer}/>
                   </Router>
                 </Provider>, document.getElementById('main'))
