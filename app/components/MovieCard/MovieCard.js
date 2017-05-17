@@ -35,6 +35,7 @@ const MovieCard = ({movieInfo,handleFavorites,index,user}) => {
           logFavorites()}}>favorite</button>
       </div>
     )
+
 }
 
 export default MovieCard

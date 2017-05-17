@@ -21,3 +21,4 @@ export function toggleMovie(id){
       id
     }
   }
+
