@@ -10,6 +10,26 @@ class Login extends Component {
     }
   }
 
+  logOn() {
+    if(this.state.password && this.state.email){
+      let userName = this.state.email.toLowerCase()
+       fetch('http://localhost:5000/api/users/')
+        .then((response) => response.json())
+        .then(res => {
+          let signedOn = false
+           res.data.forEach((user) => {
+              if (user.email === userName.toLowerCase()){
+                signedOn = true
+                this.props.handleUser({name: user.name, email: user.email})
+              }
+          })
+          if(signedOn === false) {
+            alert('username and password not found')
+          }
+        })
+    }
+
+  }
 
 
   render(){
@@ -29,7 +49,7 @@ class Login extends Component {
           />
         <button
         className="login-btn submit"
-         onClick={()=>{this.logInfo()}}>
+         onClick={()=>{this.logOn()}}>
         Submit
         </button>
       </section>

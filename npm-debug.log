@@ -1,0 +1,21 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/johnbinning/.nvm/versions/node/v6.9.5/bin/node',
+1 verbose cli   '/Users/johnbinning/.nvm/versions/node/v6.9.5/bin/npm',
+1 verbose cli   's' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.5
+4 verbose stack Error: search must be called with arguments
+4 verbose stack     at EventEmitter.search (/Users/johnbinning/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/search.js:57:15)
+4 verbose stack     at Object.commandCache.(anonymous function) (/Users/johnbinning/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/npm.js:124:13)
+4 verbose stack     at EventEmitter.<anonymous> (/Users/johnbinning/.nvm/versions/node/v6.9.5/lib/node_modules/npm/bin/npm-cli.js:73:30)
+4 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:67:7)
+4 verbose stack     at process._tickCallback (internal/process/next_tick.js:98:9)
+5 verbose cwd /Users/johnbinning/turing/mod3/movieTracker
+6 error Darwin 16.4.0
+7 error argv "/Users/johnbinning/.nvm/versions/node/v6.9.5/bin/node" "/Users/johnbinning/.nvm/versions/node/v6.9.5/bin/npm" "s"
+8 error node v6.9.5
+9 error npm  v3.10.10
+10 error search must be called with arguments
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
