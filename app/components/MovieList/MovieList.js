@@ -10,6 +10,7 @@ const MovieList = (props) => {
 
       return (
         <MovieCard
+        user={props.user}
         handleFavorites={props.handleFavorites}
         key={i}
         index={movie.id}
