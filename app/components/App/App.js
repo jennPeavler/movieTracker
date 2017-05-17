@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MovieListContainer from '../MovieList/MovieListContainer'
 import FavoritesContainer from '../Favorites/FavoritesContainer'
 import SignupContainer from '../Signup/SignupContainer.js'
+import LoginContainer from '../Login/LoginContainer.js'
 import {Route, Link, Switch} from 'react-router-dom'
 import NavBarContainer from '../NavBar/NavBarContainer'
 import { combineReducers, bindActionCreators } from 'redux'
@@ -34,6 +35,7 @@ export default class App extends Component {
         <Switch>
           <Route path='/favorites' component={FavoritesContainer} />
           <Route path='/signup' component={SignupContainer} />
+          <Route path='/login' component={LoginContainer} />
           <Route path='/' component={MovieListContainer} />
         </Switch>
         {this.props.children}
