@@ -16,7 +16,6 @@ const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4
 
 
  function fetchMovieRequest(response){
-   console.log(response)
     return {
       type: "FETCH_REQUEST",
       payload:response
