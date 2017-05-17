@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import AppContainer from './components/App/AppContainer';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
@@ -19,6 +19,6 @@ const store = createStore(rootReducer, devTools,applyMiddleware(promiseMiddlewar
 
 ReactDOM.render(<Provider store={store}>
                   <Router >
-                    <Route to='/' component={App}/>
+                    <Route to='/' component={AppContainer}/>
                   </Router>
                 </Provider>, document.getElementById('main'))

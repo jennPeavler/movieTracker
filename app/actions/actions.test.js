@@ -23,3 +23,4 @@ describe('actions tests', () => {
     expect(fetchMovieRequest(response)).toEqual(expectedAction)
   })
 })
+
