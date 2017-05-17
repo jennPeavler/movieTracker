@@ -1,13 +1,19 @@
 import React from 'react'
-import MovieCard from './MovieCard'
+import MovieCard from '../MovieCard/MovieCard'
+import styles from  './MovieList.css'
 
 const MovieList = (props) => {
 
 
     let renderCard = props.movies ?
     props.movies.map((movie,i)=>{
+
       return (
-        <MovieCard key={i} index={i} movieInfo={movie}/>
+        <MovieCard
+        handleFavorites={props.handleFavorites}
+        key={i}
+        index={movie.id}
+        movieInfo={movie}/>
       )
 })
       :
@@ -15,7 +21,7 @@ const MovieList = (props) => {
 
 
   return(
-    <section>
+    <section className="movie-list">
     {
       renderCard
     }

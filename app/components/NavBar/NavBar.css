@@ -1,0 +1,10 @@
+.navBar{
+  margin-bottom: 10px;
+}
+
+.nav-link{
+  background-color:#fff;
+  padding: 5px;
+  font-weight: 100;
+  font-family: sans-serif;
+}
