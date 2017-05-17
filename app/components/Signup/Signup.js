@@ -18,11 +18,15 @@ class Signup extends Component {
         fetch("api/users/new", {
           method: "POST",
           headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({name: this.state.name,
+          body: JSON.stringify({
+                name: this.state.name,
                 email: this.state.email,
-                password: this.state.password})})
+                password: this.state.password
+              })
+            })
         .then((response) => {
-          this.props.handleUser({name:this.state.name,email:this.state.email})})
+          this.props.handleUser({name:this.state.name,email:this.state.email})
+        })
       }
     }
   }

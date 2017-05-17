@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Login from './Login'
+import {toggleUser} from '../../actions'
 
 const mapStateToProps = (state) => {
   return{user: state.user}
