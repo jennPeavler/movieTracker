@@ -4,7 +4,7 @@ import Favorites from './Favorites'
 import Login from './Login'
 import {Route, Link, Switch} from 'react-router-dom'
 import {NavBar} from './NavBar'
-import fetchMovieRequest from '../actions'
+import {fetchMovieRequest} from '../actions'
 import { combineReducers, bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -61,4 +61,4 @@ return{
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default connect(null,mapDispatchToProps)(App)

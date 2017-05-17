@@ -5,11 +5,9 @@ const MovieList = (props) => {
 
 
     let renderCard = props.movies ?
-    props.movies.map(movie=>{
+    props.movies.map((movie,i)=>{
       return (
-        <div className="card">
-        <img src = {`https://image.tmdb.org/t/p/original${movie.poster_path}`}/>
-        </div>
+        <MovieCard key={i} index={i} movieInfo={movie}/>
       )
 })
       :

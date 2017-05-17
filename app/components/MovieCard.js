@@ -1,8 +1,11 @@
 import React from 'react'
+const MovieCard = ({movieInfo}) => {
 
-const MovieCard = () => {
     return(
-      <div>MovieCard</div>
+      <div className="movieCard">
+        <img src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
+        <button>favorite</button>
+      </div>
     )
 }
 
