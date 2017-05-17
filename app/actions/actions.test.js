@@ -1,3 +1,4 @@
+
 import { toggleMovie, fetchMovieRequest } from './index.js'
 
 describe('actions tests', () => {
@@ -23,4 +24,3 @@ describe('actions tests', () => {
     expect(fetchMovieRequest(response)).toEqual(expectedAction)
   })
 })
-

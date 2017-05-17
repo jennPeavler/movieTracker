@@ -15,6 +15,7 @@ export function toggleMovie(id){
   }
 
   export function toggleUser(id){
+    console.log("HIT")
     return{
       type: 'USER_TOGGLE',
       id

@@ -3,7 +3,7 @@ import { toggleMovie } from '../../actions'
 import MovieList from './MovieList'
 
 const mapStateToProps = (state) => {
-  return { movies: state.movieReducer }
+  return { movies: state.movieReducer,user:state.usersReducer }
 }
 
 const mapDispatchToProps = (dispatch) => {
