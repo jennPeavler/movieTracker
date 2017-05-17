@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Login from './Login'
+import Signup from './Signup'
 import { shallow, mount } from 'enzyme'
 
-describe('Login functionality', () => {
+describe('Signup functionality', () => {
 
   it('should have default state', () => {
-    const wrapper = mount(<Login />)
+    const wrapper = mount(<Signup />)
 
     expect(wrapper.state('name')).toEqual("")
     expect(wrapper.state('email')).toEqual("")
@@ -15,8 +15,8 @@ describe('Login functionality', () => {
   })
 
   it('should add new users to state', () => {
-    const wrapper = mount(<Login />)
-    
+    const wrapper = mount(<Signup />)
+
     wrapper.setState({
       name: 'hello',
       email: 'there',

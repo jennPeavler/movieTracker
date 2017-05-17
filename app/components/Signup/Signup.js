@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import styles from  './Login.css'
+import styles from  './Signup.css'
 
-class Login extends Component {
+class Signup extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -29,33 +29,33 @@ class Login extends Component {
 
   render(){
     return(
-      <section className = "login-page">
+      <section className = "signup-page">
         <input
         placeholder = "name"
-        className = "login-name"
+        className = "signup-name"
          value = {this.state.name}
          onChange = {(e)=>{this.setState({name:e.target.value})}}
         />
         <input
         placeholder = "email"
-        className = "login-email"
+        className = "signup-email"
          value = {this.state.email}
          onChange = {(e)=>{this.setState({email:e.target.value})}}
          />
         <input
           placeholder = "password"
-          className = "login-password"
+          className = "signup-password"
           value = {this.state.password}
           onChange = {(e)=>{this.setState({password:e.target.value})}}
           />
         <input
           placeholder = "retype password"
-         className = "login-retypedPassword"
+         className = "signup-retypedPassword"
           value = {this.state.retypedPassword}
           onChange = {(e)=>{this.setState({retypedPassword:e.target.value})}}
         />
         <button
-        className="login-submit"
+        className="signup-submit"
          onClick={()=>{this.logInfo()}}>
         Submit
         </button>
@@ -64,4 +64,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default Signup

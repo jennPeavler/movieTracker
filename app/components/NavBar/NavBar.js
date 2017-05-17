@@ -7,6 +7,7 @@ export const NavBar = () => {
     <div className='navBar'>
       <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink>
       <NavLink className="nav-link" activeClassName='selected' to={'/favorites'}> Favorites </NavLink>
+      <NavLink className="nav-link" activeClassName='selected' to={'/signup'}> Signup </NavLink>
       <NavLink className="nav-link" activeClassName='selected' to={'/login'}> Login </NavLink>
     </div>
   )
