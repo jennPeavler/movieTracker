@@ -3,7 +3,7 @@ import MovieListContainer from '../MovieList/MovieListContainer'
 import FavoritesContainer from '../Favorites/FavoritesContainer'
 import SignupContainer from '../Signup/SignupContainer.js'
 import {Route, Link, Switch} from 'react-router-dom'
-import {NavBar} from '../NavBar/NavBar'
+import NavBarContainer from '../NavBar/NavBarContainer'
 import { combineReducers, bindActionCreators } from 'redux'
 import styles from  './App.css'
 
@@ -30,12 +30,11 @@ export default class App extends Component {
     return (
       <div className="app">
         <h1>Movie Watcher</h1>
-        <NavBar />
+        <NavBarContainer />
         <Switch>
           <Route path='/favorites' component={FavoritesContainer} />
           <Route path='/signup' component={SignupContainer} />
           <Route path='/' component={MovieListContainer} />
-
         </Switch>
         {this.props.children}
       </div>

@@ -21,7 +21,3 @@ export const toggleUser = (id) =>{
     id
   }
 }
-
-export const directHome = () => {
-
-}
