@@ -9,9 +9,14 @@ export function toggleMovie(id){
 
  export function fetchMovieRequest(response){
     return {
-      type: "FETCH_REQUEST",
+      type: 'FETCH_REQUEST',
       payload:response
     }
   }
 
-  // function
+  export function toggleUser(id){
+    return{
+      type: 'USER_TOGGLE',
+      id
+    }
+  }

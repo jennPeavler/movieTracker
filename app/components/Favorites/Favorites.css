@@ -1,0 +1,12 @@
+.favorites-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-favorites-container{
+  font-weight: 100;
+  font-family: sans-serif;
+  color:#fff;
+}

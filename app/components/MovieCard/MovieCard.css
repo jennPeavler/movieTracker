@@ -1,0 +1,10 @@
+.movie-card{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+}
+
+.movie-card img{
+  height:300px;
+  width: 300px;
+}

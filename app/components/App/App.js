@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import MovieContainer from './MovieContainer'
-import Favorites from './Favorites'
-import Login from './Login'
+import MovieListContainer from '../MovieList/MovieListContainer'
+import FavoritesContainer from '../Favorites/FavoritesContainer'
+import LoginContainer from '../Login/LoginContainer.js'
 import {Route, Link, Switch} from 'react-router-dom'
-import {NavBar} from './NavBar'
-import {fetchMovieRequest} from '../actions'
+import {NavBar} from '../NavBar/NavBar'
 import { combineReducers, bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import styles from  './App.css'
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
   }
@@ -27,17 +26,15 @@ class App extends Component {
     fetchMovieRequest()
   }
 
-
-
   render() {
     return (
-      <div>
+      <div className="app">
         <h1>Movie Watcher</h1>
         <NavBar />
         <Switch>
-          <Route path='/favorites' component={Favorites} />
-          <Route path='/login' component={Login} />
-          <Route path='/' component={MovieContainer} />
+          <Route path='/favorites' component={FavoritesContainer} />
+          <Route path='/login' component={LoginContainer} />
+          <Route path='/' component={MovieListContainer} />
 
         </Switch>
         {this.props.children}
@@ -45,20 +42,3 @@ class App extends Component {
     )
   }
 }
-
-function mapStateToProps(state){
-  return{
-    state
-  }
-}
-
-
-function mapDispatchToProps(dispatch){
-return{
-    handleMovieFetch: (payload)=>{
-      dispatch(fetchMovieRequest(payload))
-  }
-  }
-}
-
-export default connect(null,mapDispatchToProps)(App)

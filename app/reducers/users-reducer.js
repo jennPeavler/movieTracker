@@ -1,5 +1,12 @@
 const usersReducer = (state=[], action) => {
-  return state
+  switch(action.type){
+    case 'USER_TOGGLE':
+    return  action.id===state.id? [] : action.id
+
+    default:
+    return state
+
+  }
 }
 
 export default usersReducer
