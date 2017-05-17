@@ -5,57 +5,30 @@ class Login extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name:"",
       email:"",
-      password:"",
-      retypedPassword:""
+      password:""
     }
   }
 
-  logInfo() {
-    if(this.state.password.value === this.state.retypedPassword.value) {
-      if(this.state.name !== '' && this.state.email !== '') {
-        fetch("api/users/new", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({name: this.state.name,
-                email: this.state.email,
-                password: this.state.password})})
-        .then((response) => {
-          this.props.handleUser({name:this.state.name,email:this.state.email})})
-      }
-    }
-  }
+
 
   render(){
     return(
       <section className = "login-page">
         <input
-        placeholder = "name"
-        className = "login-name"
-         value = {this.state.name}
-         onChange = {(e)=>{this.setState({name:e.target.value})}}
-        />
-        <input
         placeholder = "email"
-        className = "login-email"
+        className = "login email"
          value = {this.state.email}
          onChange = {(e)=>{this.setState({email:e.target.value})}}
          />
         <input
           placeholder = "password"
-          className = "login-password"
+          className = "password"
           value = {this.state.password}
           onChange = {(e)=>{this.setState({password:e.target.value})}}
           />
-        <input
-          placeholder = "retype password"
-         className = "login-retypedPassword"
-          value = {this.state.retypedPassword}
-          onChange = {(e)=>{this.setState({retypedPassword:e.target.value})}}
-        />
         <button
-        className="login-submit"
+        className="login-btn submit"
          onClick={()=>{this.logInfo()}}>
         Submit
         </button>
