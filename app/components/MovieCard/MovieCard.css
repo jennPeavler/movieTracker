@@ -2,32 +2,33 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
   margin: 5px;
-
-
-
-.favorite {
-background-color: red
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.not-favorite{
-background-color: black;
-}
+
 
 .not-favorite img, .favorite img {
   height:300px;
   width: 300px;
 }
 
-.card-favorite {
-  background-color: #DCAA19;
+.button-favorite , .button-not-favorite {
   border: none;
   margin-top: 10px;
+  background-color: #fff;
+
 }
 
-.card-favorite:hover {
-  color: #ede3e3;
+/*.button-not-favorite {
+}
+
+.button-favorite{
+  background-color: #DCAA19;
+}*/
+
+.button-favorite:hover, .button-not-favorite:hover {
+  color: red;
   box-shadow: 0 0 1px 1px white;
   -moz-box-shadow: 0 0 1px 1px white;
   -webkit-box-shadow: 0 0 1px 1px white;
