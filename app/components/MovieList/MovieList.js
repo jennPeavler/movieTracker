@@ -12,10 +12,8 @@ const MovieList = (props) => {
     props.movies.map(( movie , i )=>{
 
       let classname = "not-favorite"
-      if(props.favorites.length){
-        console.log(props.favorites.includes(movie.id))
-
-        classname = props.favorites.includes(movie.id)?"favorite":"not-favorite"
+      if(props.favorites.length) {
+        classname = props.favorites.includes(movie.id) ? "favorite" : "not-favorite"
       }
 
       return (
