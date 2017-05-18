@@ -41,6 +41,7 @@ const buttonText = isFavorite === "not-favorite"? "favorite":"unfavorite"
     return(
       <div className = {isFavorite}>
         <img src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
+
         <button onClick={()=>{
           logFavorites()
           }}>{buttonText}</button>

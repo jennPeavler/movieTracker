@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+
 import { addFavorite,removeFavorite } from '../../actions'
 import MovieList from './MovieList'
 
@@ -8,6 +9,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+
     handleAddFavorite: (id) =>{
       dispatch(addFavorite(id))
     },
@@ -17,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MovieList)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList)

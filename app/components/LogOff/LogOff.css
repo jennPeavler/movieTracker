@@ -1,17 +1,17 @@
-input {
-  margin: 5px;
+.logoff-warning {
+  margin: 10%;
+  color: white;
 }
 
-.signup-page {
-  margin-top: 15px;
-}
-
-.signup-submit {
+.logoff-btn {
   background-color: #DCAA19;
   border: none;
+  margin: 5px;
+  height: 30px;
+  width: 40px;
 }
 
-.signup-submit:hover {
+.logoff-btn:hover {
   color: #ede3e3;
   box-shadow: 0 0 1px 1px white;
   -moz-box-shadow: 0 0 1px 1px white;
