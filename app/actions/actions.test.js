@@ -1,5 +1,5 @@
 
-import { addFavorite, removeFavorite, fetchMovieRequest, toggleUser, logOffUser } from './index.js'
+import { addFavorite, removeFavorite, fetchMovieRequest, toggleUser, logOffUser, clearFavorite } from './index.js'
 
 describe('actions tests', () => {
 
@@ -21,6 +21,13 @@ describe('actions tests', () => {
     expect(removeFavorite(id)).toEqual(expectedAction)
   })
 
+  it('should clearFavorite', () => {
+    const expectedAction = {
+      type: 'CLEAR_FAVORITE'
+    }
+    expect(clearFavorite()).toEqual(expectedAction)
+  })
+
   it('should toggleUser', () => {
     const id = 42
     const expectedAction = {
@@ -39,7 +46,7 @@ describe('actions tests', () => {
     expect(logOffUser(id)).toEqual(expectedAction)
   })
 
-  it('should return a payload', () => {
+  it('should return a payload when fetching', () => {
     const response = {
       page: 1,
       results: [1, 2, 'hello there']
