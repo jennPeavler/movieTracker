@@ -4,11 +4,20 @@ import MovieCard from '../MovieCard/MovieCard'
 import styles from  './MovieList.css'
 
 const MovieList = (props) => {
-
+  // console.log(props.movies, 'movies')
+  //
+  // console.log(props.favorites,'fav')
   let renderCard = props.movies ?
 
     props.movies.map(( movie , i )=>{
-      let classname = props.favorites.includes(movie.id)?"favorite":"not-favorite"
+
+      let classname = "not-favorite"
+      if(props.favorites.length){
+        console.log(props.favorites.includes(movie.id))
+
+        classname = props.favorites.includes(movie.id)?"favorite":"not-favorite"
+      }
+
       return (
         <MovieCard
         isFavorite = {classname}

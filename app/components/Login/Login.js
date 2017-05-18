@@ -26,7 +26,8 @@ class Login extends Component {
                 fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
                  .then( response => response.json()).then((res)=>{
                    res.data.forEach(movie=>{
-                     this.props.handleAddFavorite(movie)
+                    let  movieId = movie.movie_id
+                     this.props.handleAddFavorite(movieId)
                    })
                  })
 
