@@ -3,12 +3,17 @@ import MovieCard from '../MovieCard/MovieCard'
 import styles from  './MovieList.css'
 
 const MovieList = (props) => {
+  console.log("chto")
+
   let renderCard = props.movies ?
     props.movies.map((movie,i)=>{
+      let classname = props.favorites.includes(movie.id)?"favorite":"not-favorite"
       return (
         <MovieCard
+        isFavorite = {classname}
         user={props.user}
-        handleFavorites={props.handleFavorites}
+        handleAddFavorite={props.handleAddFavorite}
+        handleRemoveFavorite={props.handleRemoveFavorite}
         key={i}
         index={movie.id}
         movieInfo={movie}/>
