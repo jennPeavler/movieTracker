@@ -38,11 +38,12 @@ const MovieCard =({movieInfo,handleAddFavorite,handleRemoveFavorite,index,user,i
          }
 }
 const buttonText = isFavorite === "not-favorite"? "favorite":"unfavorite"
+const buttonClass = isFavorite ==="not-favorite"? "button-not-favorite":"button-favorite"
     return(
       <div className = {isFavorite}>
         <img src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
 
-        <button onClick={()=>{
+        <button className={buttonClass} onClick={()=>{
           logFavorites()
           }}>{buttonText}</button>
       </div>
