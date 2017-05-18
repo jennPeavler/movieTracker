@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
-import {toggleMovie} from '../../actions'
+import {removeFavorite} from '../../actions'
 import Favorites     from './Favorites'
 
 const mapStateToProps = state => {
-  return { movies: state.movieReducer, favorites: state.favoritesReducer }
+  return { movies: state.movieReducer, favorites: state.favoritesReducer,user:state.usersReducer }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     handleFavorites: id => {
-      dispatch(toggleMovie(id))
+      dispatch(removeFavorite(id))
     }
   }
 }
