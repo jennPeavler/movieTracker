@@ -21,7 +21,7 @@ class Login extends Component {
            res.data.forEach( user => {
               if ( user.email === userName.toLowerCase() ){
                 signedOn = true
-                this.props.handleUser({ name: user.name, email: user.email })
+                this.props.handleUser({id:user.id})
               }
           })
           if( signedOn === false ) {

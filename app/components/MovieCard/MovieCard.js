@@ -4,11 +4,11 @@ import styles from  './MovieCard.css'
 const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, user, isFavorite}) => {
 
   const logFavorites = () => {
-    if(!user.name){
+    if(!user.id){
       alert("You must be logged in to add a movie as a favorite")
     } else {
          const movie_id = movieInfo.id
-         const user_id = user.name
+         const user_id = user.id
          const title = movieInfo.title
          const poster_path = movieInfo.poster_path
          const release_date = movieInfo.release_date
