@@ -29,10 +29,10 @@ class Signup extends Component {
         })
       }
     }
+    this.props.history.replace('/')
   }
 
   render(){
-    console.log(this.props)
     return(
       <section className = "signup-page">
         <input

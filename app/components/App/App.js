@@ -36,7 +36,7 @@ export default class App extends Component {
         <Switch>
           <Route path='/favorites' component={FavoritesContainer} />
           <Route path='/signup' render={({ history }) => <SignupContainer history={history}/>} />
-          <Route path='/login' component={LoginContainer} />
+          <Route path='/login' render={({ history }) => <LoginContainer history={history}/>} />
           <Route path='/' component={MovieListContainer} />
         </Switch>
         {this.props.children}
