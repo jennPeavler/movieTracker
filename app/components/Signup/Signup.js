@@ -25,14 +25,18 @@ class Signup extends Component {
                 password: this.state.password
               })
             })
-        .then((response) => {
-          this.props.handleUser({response})
+        .then((response) => response.json())
+        .then( res => {
+          let id = res.id
+          // this.validateInfo()
+          this.props.handleUser({id})
         })
       }
     }
   }
 
   validateInfo() {
+    console.log(this.state)
     if(this.state.password && this.state.email){
       let userEmail = this.state.email.toLowerCase()
       fetch('http://localhost:5000/api/users/')
@@ -46,6 +50,7 @@ class Signup extends Component {
           }
         })
         if (existingUser === false) {
+          console.log('something here?');
           this.props.history.replace('/')
         }
       })
@@ -83,8 +88,8 @@ class Signup extends Component {
         <button
         className="signup-submit"
          onClick={() => {
-           this.logInfo()
            this.validateInfo()
+           this.logInfo()
          }}>
         Submit
         </button>

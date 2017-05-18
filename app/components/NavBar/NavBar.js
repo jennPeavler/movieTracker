@@ -6,7 +6,7 @@ import styles from  './NavBar.css'
 export const NavBar = props => {
 
   let determineNav = () => {
-    return props.name.name ?
+    return props.name.name || props.name.id ?
       <div>
         <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink>
         <NavLink className="nav-link center" activeClassName='selected' to={'/favorites'}> Favorites </NavLink>
