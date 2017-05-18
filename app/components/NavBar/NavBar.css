@@ -3,8 +3,19 @@
 }
 
 .nav-link {
-  background-color:#fff;
+  /*background-color:#fff;*/
+  color: white;
   padding: 5px;
+  background: linear-gradient(to bottom, #646464 0%, #0e0e0e 100%);
   font-weight: 100;
   font-family: sans-serif;
+}
+
+.nav-link:hover {
+  color: #DCAA19;
+}
+
+.center {
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
 }

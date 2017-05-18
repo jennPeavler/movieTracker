@@ -1,0 +1,19 @@
+input {
+  margin: 5px;
+}
+
+.signup-page {
+  margin-top: 15px;
+}
+
+.signup-submit {
+  background-color: #DCAA19;
+  border: none;
+}
+
+.signup-submit:hover {
+  color: #ede3e3;
+  box-shadow: 0 0 1px 1px white;
+  -moz-box-shadow: 0 0 1px 1px white;
+  -webkit-box-shadow: 0 0 1px 1px white;
+}

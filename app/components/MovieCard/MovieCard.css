@@ -1,10 +1,25 @@
 .movie-card{
   display: flex;
   flex-direction: column;
-  padding: 5px 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 5px;
 }
 
 .movie-card img{
   height:300px;
   width: 300px;
+}
+
+.card-favorite {
+  background-color: #DCAA19;
+  border: none;
+  margin-top: 10px;
+}
+
+.card-favorite:hover {
+  color: #ede3e3;
+  box-shadow: 0 0 1px 1px white;
+  -moz-box-shadow: 0 0 1px 1px white;
+  -webkit-box-shadow: 0 0 1px 1px white;
 }

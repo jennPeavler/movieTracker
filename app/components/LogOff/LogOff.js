@@ -1,19 +1,15 @@
 import React, {Component} from 'react'
+
 import styles from  './LogOff.css'
 
 class LogOff extends Component {
   constructor(props){
     super(props)
-    // this.state = {
-    //   email:"",
-    //   password:""
-    // }
   }
 
   logOff() {
-    console.log(this.props.handleUser)
     this.props.handleUser({})
-    this.props.history.replace('/')
+    this.sendHome()
   }
 
   sendHome(){
@@ -23,16 +19,17 @@ class LogOff extends Component {
   render(){
     return(
       <section className = "login-page">
-        <div className="logoff-warning">Are you sure you want to log off?</div>
-
+        <div className="logoff-warning">
+          Are you sure you want to log off?
+        </div>
         <button
-        className="login-btn submit"
-         onClick={()=>{this.logOff()}}>
+          className="logoff-btn yes"
+          onClick={()=>{this.logOff()}}>
         yes
         </button>
         <button
-        className="login-btn submit"
-         onClick={()=>{this.sendHome()}}>
+          className="logoff-btn no"
+          onClick={()=>{this.sendHome()}}>
         no
         </button>
       </section>

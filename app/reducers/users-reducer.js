@@ -1,5 +1,4 @@
 const usersReducer = (state=[], action) => {
-  console.log(action, ' usersReducer')
   switch(action.type){
     case 'USER_TOGGLE':
     return  action.id === state.id ? [] : action.id

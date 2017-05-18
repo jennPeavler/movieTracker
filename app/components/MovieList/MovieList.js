@@ -1,10 +1,11 @@
 import React from 'react'
+
 import MovieCard from '../MovieCard/MovieCard'
 import styles from  './MovieList.css'
 
 const MovieList = (props) => {
   let renderCard = props.movies ?
-    props.movies.map((movie,i)=>{
+    props.movies.map( (movie, i) => {
       return (
         <MovieCard
         user={props.user}
@@ -17,7 +18,7 @@ const MovieList = (props) => {
 
   return(
     <section className="movie-list">
-    {renderCard}
+      {renderCard}
     </section>
   )
 }

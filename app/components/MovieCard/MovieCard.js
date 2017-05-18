@@ -30,9 +30,11 @@ const MovieCard = ({movieInfo,handleFavorites,index,user}) => {
     return(
       <div className="movie-card">
         <img src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
-        <button onClick={()=>{
-          handleFavorites(index)
-          logFavorites()}}>favorite</button>
+        <button
+          className='card-favorite'
+          onClick={()=>{
+            handleFavorites(index)
+            logFavorites()}}>favorite</button>
       </div>
     )
 

@@ -1,55 +1,57 @@
-import React, {Component} from 'react'
-import styles from  './Login.css'
+import React, { Component } from 'react'
+
+import styles from './Login.css'
 
 class Login extends Component {
   constructor(props){
     super(props)
     this.state = {
-      email:"",
-      password:""
+      email: "",
+      password: ""
     }
   }
 
   logOn() {
-    if(this.state.password && this.state.email){
+    if( this.state.password && this.state.email ){
       let userName = this.state.email.toLowerCase()
        fetch('http://localhost:5000/api/users/')
-        .then((response) => response.json())
-        .then(res => {
+        .then( response => response.json() )
+        .then( res => {
           let signedOn = false
            res.data.forEach((user) => {
-              if (user.email === userName.toLowerCase()){
+              if ( user.email === userName.toLowerCase() ){
                 signedOn = true
-                this.props.handleUser({name: user.name, email: user.email})
+                this.props.handleUser( {name: user.name, email: user.email} )
               }
           })
-          if(signedOn === false) {
+          if( signedOn === false ) {
             alert('username and password not found')
+          } else {
+            this.props.history.replace('/')
           }
         })
     }
-    this.props.history.replace('/')
   }
 
 
-  render(){
-    return(
+  render() {
+    return (
       <section className = "login-page">
         <input
-        placeholder = "email"
-        className = "login email"
-         value = {this.state.email}
-         onChange = {(e)=>{this.setState({email:e.target.value})}}
+          placeholder = "email"
+          className = "login email"
+          value = {this.state.email}
+          onChange = {(e) => {this.setState({email:e.target.value})}}
          />
         <input
           placeholder = "password"
           className = "password"
           value = {this.state.password}
-          onChange = {(e)=>{this.setState({password:e.target.value})}}
+          onChange = {(e) => {this.setState({password:e.target.value})}}
           />
         <button
-        className="login-btn submit"
-         onClick={()=>{this.logOn()}}>
+          className = "login-btn submit"
+          onClick = {() => { this.logOn() }}>
         Submit
         </button>
       </section>

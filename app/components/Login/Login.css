@@ -1,0 +1,20 @@
+.login-page {
+  margin: 20px;
+}
+
+.password {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.login-btn {
+  background-color: #DCAA19;
+  border: none;
+}
+
+.login-btn:hover {
+  /*box-shadow: 1px 1px 1px white;*/
+  box-shadow: 0 0 1px 1px white;
+  -moz-box-shadow: 0 0 1px 1px white;
+  -webkit-box-shadow: 0 0 1px 1px white;
+}

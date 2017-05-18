@@ -1,17 +1,18 @@
 import { connect } from 'react-redux'
+
 import { toggleMovie } from '../../actions'
 import MovieList from './MovieList'
 
 const mapStateToProps = (state) => {
-  return { movies: state.movieReducer,user:state.usersReducer }
+  return { movies: state.movieReducer, user: state.usersReducer }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleFavorites: (id) =>{
+    handleFavorites: (id) => {
       dispatch(toggleMovie(id))
     }
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(MovieList)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList)
