@@ -33,7 +33,25 @@ class Signup extends Component {
     this.props.history.replace('/')
   }
 
-  render() {
+  validateInfo() {
+    if(this.state.password && this.state.email){
+      let userEmail = this.state.email.toLowerCase()
+      fetch('http://localhost:5000/api/users/')
+      .then((response) => response.json())
+      .then(res => {
+        res.data.forEach((user) => {
+          console.log(user);
+          if (user.email === userEmail) {
+            alert('The user email already exists\nLogin with your account or choose a different Signup email')
+          }
+        })
+      })
+    }
+    this.props.history.replace('/signup')
+  }
+
+  render(){
+
     return(
       <section className = "signup-page">
         <input
@@ -61,8 +79,12 @@ class Signup extends Component {
           onChange = {(e) => {this.setState({retypedPassword: e.target.value})}}
         />
         <button
-          className = "signup-submit"
-          onClick = {() => {this.logInfo()}}>
+        className="signup-submit"
+         onClick={()=>{
+           this.logInfo()
+           this.validateInfo()
+         }}>
+
         Submit
         </button>
       </section>
