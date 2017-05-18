@@ -25,28 +25,36 @@ class Signup extends Component {
                 password: this.state.password
               })
             })
-        .then((response) => {
-          this.props.handleUser({response})
+        .then((response) => response.json())
+        .then( res => {
+          let id = res.id
+          // this.validateInfo()
+          this.props.handleUser({id})
         })
       }
     }
-    this.props.history.replace('/')
   }
 
   validateInfo() {
+    console.log(this.state)
     if(this.state.password && this.state.email){
       let userEmail = this.state.email.toLowerCase()
       fetch('http://localhost:5000/api/users/')
       .then((response) => response.json())
       .then(res => {
+        let existingUser = false
         res.data.forEach( user => {
           if (user.email === userEmail) {
+            existingUser = true
             alert('The user email already exists\nLogin with your account or choose a different Signup email')
           }
         })
+        if (existingUser === false) {
+          console.log('something here?');
+          this.props.history.replace('/')
+        }
       })
     }
-    this.props.history.replace('/signup')
   }
 
   render(){
@@ -80,8 +88,8 @@ class Signup extends Component {
         <button
         className="signup-submit"
          onClick={() => {
-           this.logInfo()
            this.validateInfo()
+           this.logInfo()
          }}>
         Submit
         </button>
