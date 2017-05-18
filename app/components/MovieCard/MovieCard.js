@@ -4,7 +4,7 @@ import styles from  './MovieCard.css'
 const MovieCard =({movieInfo,handleAddFavorite,handleRemoveFavorite,index,user,isFavorite}) => {
 
   const logFavorites = () => {
-    if(!user.length){
+    if(!user.name){
       alert("You must be logged in to add a movie as a favorite")
     } else {
          const movie_id = movieInfo.id
@@ -23,7 +23,6 @@ const MovieCard =({movieInfo,handleAddFavorite,handleRemoveFavorite,index,user,i
              }).then( () => { handleAddFavorite(index)})
 
        } else {
-         console.log("will not be fav")
 
           fetch(`/api/users/${user_id}/favorites/${movie_id}`, {
           method: "DELETE",

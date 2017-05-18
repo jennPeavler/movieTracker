@@ -5,7 +5,7 @@ import { logOffUser } from '../../actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleUser: (id) => {
+    handleUser: id => {
       dispatch(logOffUser(id))
     }
   }

@@ -12,11 +12,11 @@ class LogOff extends Component {
     this.sendHome()
   }
 
-  sendHome(){
+  sendHome() {
     this.props.history.replace('/')
   }
 
-  render(){
+  render() {
     return(
       <section className = "login-page">
         <div className="logoff-warning">
@@ -24,12 +24,12 @@ class LogOff extends Component {
         </div>
         <button
           className="logoff-btn yes"
-          onClick={()=>{this.logOff()}}>
+          onClick={ () => {this.logOff()}}>
         yes
         </button>
         <button
           className="logoff-btn no"
-          onClick={()=>{this.sendHome()}}>
+          onClick={ () => {this.sendHome()}}>
         no
         </button>
       </section>

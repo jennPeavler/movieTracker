@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import Login from './Login'
 import { toggleUser } from '../../actions'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {user: state.user}
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleUser: (id) => {
+    handleUser: id => {
       dispatch(toggleUser(id))
     }
   }

@@ -21,7 +21,7 @@ export default class App extends Component {
       let data = ""
        fetch(url)
         .then(response => response.json())
-        .then(res=> {
+        .then(res => {
           this.props.handleMovieFetch(res.results)
         })
     }
