@@ -27,8 +27,8 @@ describe('Signup functionality', () => {
     let btn = wrapper.find('button')
     // btn.simulate('click')
 
-    console.log(wrapper.state())
-    console.log()
+    // console.log(wrapper.state())
+    // console.log()
     // expect(wrapper.state('retypedPassword')).toEqual("")
   })
 })

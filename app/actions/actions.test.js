@@ -1,15 +1,42 @@
 
-import { toggleMovie, fetchMovieRequest } from './index.js'
+import { addFavorite, removeFavorite, fetchMovieRequest, toggleUser, logOffUser } from './index.js'
 
 describe('actions tests', () => {
 
-  it('should return a toggle a favorite', () => {
+  it('should addFavorite', () => {
     const id = 42
     const expectedAction = {
-      type: 'TOGGLE_FAVORITE',
+      type: 'ADD_FAVORITE',
       id : 42
     }
-    expect(toggleMovie(id)).toEqual(expectedAction)
+    expect(addFavorite(id)).toEqual(expectedAction)
+  })
+
+  it('should removeFavorite', () => {
+    const id = 42
+    const expectedAction = {
+      type: 'REMOVE_FAVORITE',
+      id : 42
+    }
+    expect(removeFavorite(id)).toEqual(expectedAction)
+  })
+
+  it('should toggleUser', () => {
+    const id = 42
+    const expectedAction = {
+      type: 'USER_TOGGLE',
+      id : 42
+    }
+    expect(toggleUser(id)).toEqual(expectedAction)
+  })
+
+  it('should logOffUser', () => {
+    const id = 42
+    const expectedAction = {
+      type: 'USER_LOGOUT',
+      id : 42
+    }
+    expect(logOffUser(id)).toEqual(expectedAction)
   })
 
   it('should return a payload', () => {

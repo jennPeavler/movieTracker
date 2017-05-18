@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import styles from './Signup.css'
+// import styles from './Signup.css'
 
 class Signup extends Component {
   constructor(props){
