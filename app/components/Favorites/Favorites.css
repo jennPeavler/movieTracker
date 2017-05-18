@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+  .favorite{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+  }
+
+
+
 .no-favorites-container {
   font-weight: 100;
   font-family: sans-serif;
