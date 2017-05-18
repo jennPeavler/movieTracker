@@ -1,5 +1,5 @@
 const movieReducer = (state=[], action) => {
-
+  
   switch(action.type){
     case'FETCH_REQUEST':
     return action.payload

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import MovieCard from '../MovieCard/MovieCard'
-import styles from  './MovieList.css'
+// import styles from  './MovieList.css'
 
 const MovieList = (props) => {
 

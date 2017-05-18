@@ -8,7 +8,7 @@ import SignupContainer from '../Signup/SignupContainer.js'
 import LoginContainer from '../Login/LoginContainer.js'
 import LogOffContainer from '../LogOff/LogOffContainer.js'
 import NavBarContainer from '../NavBar/NavBarContainer'
-import styles from './App.css'
+// import styles from './App.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    console.log('in did mount')
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     let fetchMovieRequest = ()=>{
       let data = ""
@@ -23,6 +24,10 @@ export default class App extends Component {
         .then(response => response.json())
         .then(res => {
           this.props.handleMovieFetch(res.results)
+        })
+        .catch(response => {
+          console.log('IM IN CATCH STATEMENT')
+          this.props.handleMovieFetch('error in api call')
         })
     }
     fetchMovieRequest()

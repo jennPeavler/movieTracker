@@ -1,6 +1,6 @@
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
-import styles from  './Favorites.css'
+// import styles from  './Favorites.css'
 
 const Favorites = ({ movies, favorites, handleFavorites }) => {
   let list = movies.filter( movie => {

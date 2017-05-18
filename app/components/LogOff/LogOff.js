@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import styles from  './LogOff.css'
+// import styles from  './LogOff.css'
 
 class LogOff extends Component {
   constructor(props){

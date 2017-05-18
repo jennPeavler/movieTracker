@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from  './MovieCard.css'
+// import styles from  './MovieCard.css'
 
 const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, user, isFavorite}) => {
 

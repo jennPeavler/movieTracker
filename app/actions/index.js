@@ -18,6 +18,7 @@ export const removeFavorite = (id) => {
 
 
 export const fetchMovieRequest = (response) => {
+
   return {
     type: 'FETCH_REQUEST',
     payload: response
