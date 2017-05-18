@@ -25,7 +25,7 @@ class Signup extends Component {
               })
             })
         .then((response) => {
-          this.props.handleUser({name:this.state.name,email:this.state.email})
+          this.props.handleUser({response})
         })
       }
     }

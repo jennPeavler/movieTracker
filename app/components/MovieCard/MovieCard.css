@@ -1,10 +1,20 @@
-.movie-card{
+.not-favorite, .favorite{
   display: flex;
   flex-direction: column;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  border: 15px solid black;
 }
 
-.movie-card img{
+
+.favorite {
+background-color: red
+}
+
+.not-favorite{
+background-color: black;
+}
+
+.not-favorite img, .favorite img {
   height:300px;
   width: 300px;
 }
