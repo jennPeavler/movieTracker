@@ -10,6 +10,7 @@ class LogOff extends Component {
   logOff() {
     this.props.handleUser({})
     this.sendHome()
+    this.props.handleClearFavorites()
   }
 
   sendHome() {
