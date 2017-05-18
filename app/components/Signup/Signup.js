@@ -29,6 +29,7 @@ class Signup extends Component {
         })
       }
     }
+    this.props.history.replace('/')
   }
 
   render(){
