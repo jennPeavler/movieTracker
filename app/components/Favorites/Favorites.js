@@ -2,13 +2,13 @@ import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
 import styles from  './Favorites.css'
 
-const Favorites = ({movies,favorites,handleFavorites}) => {
-  let list = movies.filter(movie => {
-  return favorites.includes(movie.id)
+const Favorites = ({ movies, favorites, handleFavorites }) => {
+  let list = movies.filter( movie => {
+    return favorites.includes(movie.id)
 })
 
 let renderCard = list.length ?
-  list.map((movie,i)=>{
+  list.map(( movie, i ) => {
     return (
       <MovieCard
       handleFavorites={handleFavorites}

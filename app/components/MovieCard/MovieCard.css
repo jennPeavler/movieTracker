@@ -7,15 +7,11 @@
 
 .not-favorite {
   background-color: rgba(0, 0, 0, 0.3);
-
 }
 
 .favorite {
   background-color: #dcaa19;
-
 }
-
-
 
 .not-favorite img, .favorite img {
   height:300px;

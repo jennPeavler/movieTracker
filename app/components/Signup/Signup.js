@@ -39,8 +39,7 @@ class Signup extends Component {
       fetch('http://localhost:5000/api/users/')
       .then((response) => response.json())
       .then(res => {
-        res.data.forEach((user) => {
-          console.log(user);
+        res.data.forEach( user => {
           if (user.email === userEmail) {
             alert('The user email already exists\nLogin with your account or choose a different Signup email')
           }
@@ -80,11 +79,10 @@ class Signup extends Component {
         />
         <button
         className="signup-submit"
-         onClick={()=>{
+         onClick={() => {
            this.logInfo()
            this.validateInfo()
          }}>
-
         Submit
         </button>
       </section>

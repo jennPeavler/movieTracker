@@ -18,10 +18,10 @@ class Login extends Component {
         .then( response => response.json() )
         .then( res => {
           let signedOn = false
-           res.data.forEach((user) => {
+           res.data.forEach( user => {
               if ( user.email === userName.toLowerCase() ){
                 signedOn = true
-                this.props.handleUser( {name: user.name, email: user.email} )
+                this.props.handleUser({ name: user.name, email: user.email })
               }
           })
           if( signedOn === false ) {
@@ -41,13 +41,13 @@ class Login extends Component {
           placeholder = "email"
           className = "login email"
           value = {this.state.email}
-          onChange = {(e) => {this.setState({email:e.target.value})}}
+          onChange = { e  => {this.setState({ email: e.target.value })}}
          />
         <input
           placeholder = "password"
           className = "password"
           value = {this.state.password}
-          onChange = {(e) => {this.setState({password:e.target.value})}}
+          onChange = { e => {this.setState({ password: e.target.value })}}
           />
         <button
           className = "login-btn submit"

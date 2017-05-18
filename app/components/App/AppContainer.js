@@ -6,7 +6,7 @@ import { fetchMovieRequest } from '../../actions'
 
 function mapDispatchToProps(dispatch) {
   return {
-      handleMovieFetch: (payload) => {
+      handleMovieFetch: payload => {
         dispatch(fetchMovieRequest(payload))
       }
   }

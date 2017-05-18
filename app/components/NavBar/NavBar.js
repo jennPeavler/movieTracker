@@ -3,9 +3,8 @@ import { NavLink } from 'react-router-dom'
 import styles from  './NavBar.css'
 
 
-export const NavBar = (props) => {
+export const NavBar = props => {
 
-  console.log('navbar ', props)
   let determineNav = () => {
     return props.name.name ?
       <div>
@@ -14,7 +13,6 @@ export const NavBar = (props) => {
         <NavLink className="nav-link" activeClassName='selected' to={'/logoff'}> Logoff ({props.name.name}) </NavLink>
       </div> :
       <div>
-        {/* <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink> */}
         <NavLink className="nav-link center" activeClassName='selected' to={'/signup'}> Signup </NavLink>
         <NavLink className="nav-link" activeClassName='selected' to={'/login'}> Login </NavLink>
       </div>
