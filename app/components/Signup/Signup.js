@@ -30,7 +30,6 @@ class Signup extends Component {
         })
       }
     }
-    this.props.history.replace('/')
   }
 
   validateInfo() {
@@ -39,14 +38,18 @@ class Signup extends Component {
       fetch('http://localhost:5000/api/users/')
       .then((response) => response.json())
       .then(res => {
+        let existingUser = false
         res.data.forEach( user => {
           if (user.email === userEmail) {
+            existingUser = true
             alert('The user email already exists\nLogin with your account or choose a different Signup email')
           }
         })
+        if (existingUser === false) {
+          this.props.history.replace('/')
+        }
       })
     }
-    this.props.history.replace('/signup')
   }
 
   render(){
