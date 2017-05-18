@@ -1,9 +1,23 @@
 #main h1 {
-  background-color: blue;
+  /*background-color: #DCAA19;*/
+  background: linear-gradient(to bottom, #646464 0%, #0e0e0e 100%);
   font-family: sans-serif;
   font-weight: 100;
 }
 
 #main {
   text-align: center;
+}
+
+body {
+  background-color: #333333;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }

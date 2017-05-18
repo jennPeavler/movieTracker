@@ -4,18 +4,20 @@ import styles from  './NavBar.css'
 
 
 export const NavBar = (props) => {
-  let determineNav = () => {return props.name.name ?
-    <div>
-      <p>Welcome {props.name.name}, click a movie to add it to your favorites</p>
-      <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink>
-      <NavLink className="nav-link" activeClassName='selected' to={'/favorites'}> Favorites </NavLink>
-      <NavLink className="nav-link" activeClassName='selected' to={'/'}> Logout </NavLink>
-    </div> :
-    <div>
-      {/* <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink> */}
-      <NavLink className="nav-link" activeClassName='selected' to={'/signup'}> Signup </NavLink>
-      <NavLink className="nav-link" activeClassName='selected' to={'/login'}> Login </NavLink>
-    </div>
+
+  console.log('navbar ', props)
+  let determineNav = () => {
+    return props.name.name ?
+      <div>
+        <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink>
+        <NavLink className="nav-link center" activeClassName='selected' to={'/favorites'}> Favorites </NavLink>
+        <NavLink className="nav-link" activeClassName='selected' to={'/logoff'}> Logoff ({props.name.name}) </NavLink>
+      </div> :
+      <div>
+        {/* <NavLink className="nav-link" activeClassName='selected' to={'/'}> Home </NavLink> */}
+        <NavLink className="nav-link center" activeClassName='selected' to={'/signup'}> Signup </NavLink>
+        <NavLink className="nav-link" activeClassName='selected' to={'/login'}> Login </NavLink>
+      </div>
   }
   return (
     <div>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Signup from './Signup'
 import { shallow, mount } from 'enzyme'
+
+import Signup from './Signup'
 
 describe('Signup functionality', () => {
 

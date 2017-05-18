@@ -1,10 +1,57 @@
-.movie-card{
+.not-favorite, .favorite{
   display: flex;
   flex-direction: column;
-  padding: 5px 10px;
+  padding: 10px;
+  margin: 5px;
 }
 
-.movie-card img{
+.not-favorite {
+  background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.favorite {
+  background-color: #dcaa19;
+
+}
+
+
+
+.not-favorite img, .favorite img {
   height:300px;
   width: 300px;
+}
+
+.button-favorite {
+  /*background-color: white;*/
+  background-color: #3c3a3a;
+  color: white;
+  border: none;
+  margin-top: 10px;
+}
+
+.button-not-favorite {
+  border: none;
+  margin-top: 10px;
+  background-color: #dcaa19;
+  /*background: linear-gradient(to bottom, #646464 0%, #0e0e0e 100%);*/
+}
+
+.button-favorite,
+.button-not-favorite {
+  height: 30px;
+}
+
+/*.button-not-favorite {
+}
+
+.button-favorite{
+  background-color: #DCAA19;
+}*/
+
+.button-favorite:hover, .button-not-favorite:hover {
+  color: black;
+  box-shadow: 0 0 1px 1px white;
+  -moz-box-shadow: 0 0 1px 1px white;
+  -webkit-box-shadow: 0 0 1px 1px white;
 }
