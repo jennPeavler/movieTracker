@@ -6,6 +6,7 @@ import MovieListContainer from '../MovieList/MovieListContainer'
 import FavoritesContainer from '../Favorites/FavoritesContainer'
 import SignupContainer from '../Signup/SignupContainer.js'
 import LoginContainer from '../Login/LoginContainer.js'
+import LogOffContainer from '../LogOff/LogOffContainer.js'
 import NavBarContainer from '../NavBar/NavBarContainer'
 import styles from  './App.css'
 
@@ -37,6 +38,7 @@ export default class App extends Component {
           <Route path='/favorites' component={FavoritesContainer} />
           <Route path='/signup' render={({ history }) => <SignupContainer history={history}/>} />
           <Route path='/login' render={({ history }) => <LoginContainer history={history}/>} />
+          <Route path='/logoff' render={({ history }) => <LogOffContainer history={history}/>} />
           <Route path='/' component={MovieListContainer} />
         </Switch>
         {this.props.children}

@@ -14,9 +14,16 @@ export const fetchMovieRequest = (response) => {
   }
 }
 
-export const toggleUser = (id) =>{  
+export const toggleUser = (id) =>{
   return{
     type: 'USER_TOGGLE',
+    id
+  }
+}
+
+export const logOffUser = (id) =>{
+  return{
+    type: 'USER_LOGOUT',
     id
   }
 }
