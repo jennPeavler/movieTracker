@@ -16,6 +16,13 @@ export const removeFavorite = (id) => {
   }
 }
 
+export const clearFavorite = ()=>{
+  return{
+    type:'CLEAR_FAVORITE'
+  }
+
+}
+
 
 export const fetchMovieRequest = (response) => {
   return {

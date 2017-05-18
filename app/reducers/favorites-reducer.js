@@ -12,6 +12,9 @@ const favoritesReducer = (state=[], action) => {
     newState.splice(newState.indexOf(action.id),1)
     return [...newState]
 
+    case 'CLEAR_FAVORITE':
+    return []
+
     default:
     return state
   }
