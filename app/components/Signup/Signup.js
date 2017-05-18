@@ -88,8 +88,9 @@ class Signup extends Component {
         <button
         className="signup-submit"
          onClick={() => {
-           this.validateInfo()
            this.logInfo()
+           this.validateInfo()
+
          }}>
         Submit
         </button>
