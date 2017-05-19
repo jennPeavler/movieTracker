@@ -11,6 +11,7 @@ class LogOff extends Component {
     this.props.handleUser({})
     this.sendHome()
     this.props.handleClearFavorites()
+    localStorage.clear()
   }
 
   sendHome() {

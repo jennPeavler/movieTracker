@@ -15,6 +15,16 @@ export default class App extends Component {
     super(props)
   }
 
+  componentWillMount(){
+    const user = localStorage.getItem("user")
+    if(user){
+      console.log("HIT")
+
+    this.props.handleUserFetch(user)
+    }
+  }
+
+
   componentDidMount() {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     let fetchMovieRequest = ()=>{
@@ -23,9 +33,13 @@ export default class App extends Component {
         .then(response => response.json())
         .then(res => {
           this.props.handleMovieFetch(res.results)
+
+
         })
     }
+
     fetchMovieRequest()
+
   }
 
   render() {
