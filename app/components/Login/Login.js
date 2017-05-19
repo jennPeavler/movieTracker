@@ -25,14 +25,13 @@ class Login extends Component {
                 this.props.handleUser({id:user.id})
                 this.props.handleShowName({name:user.name})
                 fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
-                 .then( response => response.json()).then((res)=>{
-                   res.data.forEach(movie=>{
-                    let  movieId = movie.movie_id
-                     this.props.handleAddFavorite(movieId)
+                 .then( response => response.json())
+                 .then( res => {
+                   res.data.forEach( movie => {
+                    let movieId = movie.movie_id
+                    this.props.handleAddFavorite(movieId)
                    })
                  })
-
-
               }
           })
           if( signedOn === false ) {
@@ -61,7 +60,7 @@ class Login extends Component {
           />
         <button
           className = "login-btn submit"
-          onClick = {() => { this.logOn() }}>
+          onClick = { () => { this.logOn() }}>
         Submit
         </button>
       </section>

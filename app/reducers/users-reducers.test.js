@@ -6,6 +6,14 @@ describe('usersReducer test', () => {
     expect(usersReducer(undefined, {})).toEqual([])
   })
 
+  it('it should return default state if no action type matches', () => {
+    const action = {
+      id: 42,
+      type: 'HELLO_THERE'
+    }
+    expect(usersReducer(undefined, action)).toEqual([])
+  })
+
   it('it should toggle a user', () => {
     const id = 42
     const action = {
