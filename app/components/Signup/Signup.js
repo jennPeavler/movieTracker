@@ -30,6 +30,7 @@ class Signup extends Component {
           let id = res.id
           // this.validateInfo()
           this.props.handleUser({id})
+          this.props.handleShowName({name:this.state.name})
         })
       }
     }

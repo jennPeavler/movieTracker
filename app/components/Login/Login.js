@@ -22,7 +22,7 @@ class Login extends Component {
               if ( user.email === userName.toLowerCase() ){
                 signedOn = true
                 this.props.handleUser({id:user.id})
-
+                this.props.handleShowName({name:user.name}) 
                 fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
                  .then( response => response.json()).then((res)=>{
                    res.data.forEach(movie=>{
