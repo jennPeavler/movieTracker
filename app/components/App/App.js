@@ -74,10 +74,12 @@ export default class App extends Component {
 
           <Route path='/:id' render={({ match }) => {
   const movie = this.props.state.movieReducer.find((movie) => movie.id === parseInt(match.params.id));
-  console.log(movie)
   if (movie) {
-    console.log(movie)
-    return <MovieDetails match={match} {...movie} />;
+    return <MovieDetails
+    handleAddFavorite={this.props.handleAddFavorite}
+    handleRemoveFavorite = {this.props.handleRemoveFavorite}
+    isFavorites={this.props.state.favoritesReducer}
+     match={match} {...movie} />;
   }
   return (<div>This idea does not exist! </div>);
 
