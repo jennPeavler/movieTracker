@@ -19,8 +19,18 @@ export default class App extends Component {
     const user = localStorage.getItem("user")
     if(user){
       console.log("HIT")
+      const id = Number(user)
+    this.props.handleUserFetch({id})
 
-    this.props.handleUserFetch(user)
+    fetch(`http://localhost:5000/api//users/${id}/favorites`)
+     .then( response => response.json()).then((res)=>{
+       res.data.forEach(movie=>{
+        let  movieId = movie.movie_id
+         this.props.handleAddFavorite(movieId)
+       })
+     })
+
+
     }
   }
 
@@ -33,8 +43,6 @@ export default class App extends Component {
         .then(response => response.json())
         .then(res => {
           this.props.handleMovieFetch(res.results)
-
-
         })
     }
 

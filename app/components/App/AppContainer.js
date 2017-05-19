@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import App from './App'
-import { fetchMovieRequest,toggleUser } from '../../actions'
+import { fetchMovieRequest, toggleUser, addFavorite } from '../../actions'
 
 
 function mapDispatchToProps(dispatch) {
@@ -11,6 +11,9 @@ function mapDispatchToProps(dispatch) {
       },
       handleUserFetch: id => {
         dispatch(toggleUser(id))
+      },
+      handleAddFavorite: id => {
+        dispatch(addFavorite(id))
       }
   }
 }
