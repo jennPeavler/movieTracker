@@ -72,10 +72,12 @@ export default class App extends Component {
           <Route path='/login' render={({ history }) => <LoginContainer history={history}/>} />
           <Route path='/logoff' render={({ history }) => <LogOffContainer history={history}/>} />
 
-          <Route path='/ideas/:id' render={({ match }) => {
-  const idea = ideas.find((idea) => idea.id === parseInt(match.params.id));
-  if (idea) {
-    return <ListItem match={match} {...idea} />;
+          <Route path='/:id' render={({ match }) => {
+  const movie = this.props.state.movieReducer.find((movie) => movie.id === parseInt(match.params.id));
+  console.log(movie)
+  if (movie) {
+    console.log(movie)
+    return <MovieDetails match={match} {...movie} />;
   }
   return (<div>This idea does not exist! </div>);
 

@@ -3,7 +3,7 @@ import React from 'react'
 
 const MovieDetails = (props) => {
   return (
-    <div>HOLY SHIT</div>
+    <div className="movie-details">{props.id}</div>
   )
 }
 
