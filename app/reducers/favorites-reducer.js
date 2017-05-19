@@ -4,7 +4,6 @@ const favoritesReducer = (state=[], action) => {
     return [action.id, ...state]
 
     case 'REMOVE_FAVORITE':
-    console.log('favs action', action)
     let newState = state
     newState.splice(newState.indexOf(action.id), 1)
     return [...newState]
