@@ -6,7 +6,7 @@ import styles from  './MovieList.css'
 const MovieList = (props) => {
 
   const changePath = (route) => {
-    console.log(route.id,"route")
+
     props.history.replace(`/${route.id}`)
   }
 
