@@ -24,13 +24,23 @@ export default class App extends Component {
 
     fetch(`http://localhost:5000/api//users/${id}/favorites`)
      .then( response => response.json()).then((res)=>{
+      //  console.log(res)
        res.data.forEach(movie=>{
         let  movieId = movie.movie_id
          this.props.handleAddFavorite(movieId)
        })
+
+       fetch('http://localhost:5000/api/users/')
+        .then( response => response.json() )
+        .then( res => {
+          res.data.forEach(i =>{
+            if(i.id===id){
+              this.props.handleShowName({name:i.name})
+
+            }
+          })
      })
-
-
+     })
     }
   }
 
