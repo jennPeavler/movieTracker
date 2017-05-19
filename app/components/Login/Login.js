@@ -21,8 +21,9 @@ class Login extends Component {
            res.data.forEach( user => {
               if ( user.email === userName.toLowerCase() ){
                 signedOn = true
+                localStorage.setItem("user",user.id)
                 this.props.handleUser({id:user.id})
-
+                this.props.handleShowName({name:user.name})
                 fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
                  .then( response => response.json()).then((res)=>{
                    res.data.forEach(movie=>{
@@ -42,7 +43,6 @@ class Login extends Component {
         })
     }
   }
-
 
   render() {
     return (

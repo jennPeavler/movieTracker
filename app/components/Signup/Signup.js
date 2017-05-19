@@ -28,15 +28,15 @@ class Signup extends Component {
         .then((response) => response.json())
         .then( res => {
           let id = res.id
-          // this.validateInfo()
+          localStorage.setItem("user",id)
           this.props.handleUser({id})
+          this.props.handleShowName({name:this.state.name})
         })
       }
     }
   }
 
   validateInfo() {
-    console.log(this.state)
     if(this.state.password && this.state.email){
       let userEmail = this.state.email.toLowerCase()
       fetch('http://localhost:5000/api/users/')
@@ -50,7 +50,6 @@ class Signup extends Component {
           }
         })
         if (existingUser === false) {
-          console.log('something here?');
           this.props.history.replace('/')
         }
       })

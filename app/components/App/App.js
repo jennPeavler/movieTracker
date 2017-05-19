@@ -15,6 +15,36 @@ export default class App extends Component {
     super(props)
   }
 
+  componentWillMount(){
+    const user = localStorage.getItem("user")
+    if(user){
+      console.log("HIT")
+      const id = Number(user)
+    this.props.handleUserFetch({id})
+
+    fetch(`http://localhost:5000/api//users/${id}/favorites`)
+     .then( response => response.json()).then((res)=>{
+      //  console.log(res)
+       res.data.forEach(movie=>{
+        let  movieId = movie.movie_id
+         this.props.handleAddFavorite(movieId)
+       })
+
+       fetch('http://localhost:5000/api/users/')
+        .then( response => response.json() )
+        .then( res => {
+          res.data.forEach(i =>{
+            if(i.id===id){
+              this.props.handleShowName({name:i.name})
+
+            }
+          })
+     })
+     })
+    }
+  }
+
+
   componentDidMount() {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     let fetchMovieRequest = ()=>{
@@ -25,7 +55,9 @@ export default class App extends Component {
           this.props.handleMovieFetch(res.results)
         })
     }
+
     fetchMovieRequest()
+
   }
 
   render() {

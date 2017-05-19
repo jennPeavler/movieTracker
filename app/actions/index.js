@@ -1,6 +1,11 @@
 const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
 
-
+export const showName = (name) =>{
+  return {
+  type:  'SHOW_NAME',
+  name
+  }
+}
 
 export const addFavorite = (id) => {
   return{

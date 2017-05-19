@@ -14,4 +14,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(LogOff)
+const mapStateToProps = (state) =>{
+  return{userName:state.showNameReducer}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogOff)
