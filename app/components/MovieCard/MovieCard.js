@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from  './MovieCard.css'
 
-const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, user, isFavorite}) => {
+const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, user, isFavorite, changePath}) => {
 
   const logFavorites = () => {
     if(!user.id){
@@ -36,7 +36,7 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
 const buttonText = isFavorite === "not-favorite" ? "favorite" : "unfavorite"
 const buttonClass = isFavorite === "not-favorite" ? "button-not-favorite" : "button-favorite"
     return(
-      <div className = {isFavorite}>
+      <div onClick={() => changePath(movieInfo)} className = {isFavorite}>
         <img src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
 
         <button className={buttonClass} onClick={()=>{
@@ -46,7 +46,7 @@ const buttonClass = isFavorite === "not-favorite" ? "button-not-favorite" : "but
     )
 
   return(
-    <div className="movie-card">
+    <div onClick={() => changePath(movieInfo)} className="movie-card">
       <img src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
       <button onClick={() => {
         handleFavorites(index)
