@@ -1,4 +1,25 @@
+.movie-details{
+  width:100%;
+}
+
 .movie-details-img{
   width:320px;
   height:400px
+}
+
+.movie-details-overview{
+  width:80%;
+  margin: 5px auto;
+}
+
+.movie-details-category{
+  color: #dcaa19
+}
+
+.movie-details-info-container{
+  display: flex;
+  width: 80%;
+  margin: 0px auto;
+  align-items: flex-start;
+  flex-direction: column;
 }
