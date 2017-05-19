@@ -4,9 +4,12 @@ import MovieCard from '../MovieCard/MovieCard'
 import styles from  './MovieList.css'
 
 const MovieList = (props) => {
-  // console.log(props.movies, 'movies')
-  //
-  // console.log(props.favorites,'fav')
+
+  const changePath = (route) => {
+
+    props.history.replace(`/${route.id}`)
+  }
+
   let renderCard = props.movies ?
 
     props.movies.map(( movie , i )=>{
@@ -18,6 +21,7 @@ const MovieList = (props) => {
 
       return (
         <MovieCard
+        changePath = {changePath}
         isFavorite = {classname}
         user={props.user}
         handleAddFavorite={props.handleAddFavorite}

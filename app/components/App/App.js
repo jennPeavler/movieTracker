@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { combineReducers, bindActionCreators } from 'redux'
 import { Route, Link, Switch } from 'react-router-dom'
 
+import MovieDetails       from '../MovieDetails/MovieDetails'
 import MovieListContainer from '../MovieList/MovieListContainer'
 import FavoritesContainer from '../Favorites/FavoritesContainer'
 import SignupContainer from '../Signup/SignupContainer.js'
@@ -70,7 +71,21 @@ export default class App extends Component {
           <Route path='/signup' render={({ history }) => <SignupContainer history={history}/>} />
           <Route path='/login' render={({ history }) => <LoginContainer history={history}/>} />
           <Route path='/logoff' render={({ history }) => <LogOffContainer history={history}/>} />
-          <Route path='/' component={MovieListContainer} />
+
+          <Route path='/:id' render={({ match }) => {
+  const movie = this.props.state.movieReducer.find((movie) => movie.id === parseInt(match.params.id));
+  console.log(movie)
+  if (movie) {
+    console.log(movie)
+    return <MovieDetails match={match} {...movie} />;
+  }
+  return (<div>This idea does not exist! </div>);
+
+}} />
+
+
+
+          <Route path='/' render={({ history }) => <MovieListContainer history={history}/>} />
         </Switch>
         {this.props.children}
       </div>
