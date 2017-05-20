@@ -65,19 +65,19 @@ class Signup extends Component {
         />
         <input
           placeholder = "email"
-          className = "user-input"
+          className = "user-input signup-email"
           value = {this.state.email}
           onChange = {(e) => {this.setState({email: e.target.value})}}
         />
         <input
           placeholder = "password"
-          className = "user-input"
+          className = "user-input signup-password"
           value = {this.state.password}
           onChange = {(e) => {this.setState({password: e.target.value})}}
         />
         <input
           placeholder = "retype password"
-          className = "user-input"
+          className = "user-input signup-retypedPassword"
           value = {this.state.retypedPassword}
           onChange = {(e) => {this.setState({retypedPassword: e.target.value})}}
         />
