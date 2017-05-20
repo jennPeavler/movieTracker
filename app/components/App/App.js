@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { combineReducers, bindActionCreators } from 'redux'
 import { Route, Link, Switch } from 'react-router-dom'
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import MovieDetails       from '../MovieDetails/MovieDetails'
 import MovieListContainer from '../MovieList/MovieListContainer'
@@ -66,6 +67,7 @@ export default class App extends Component {
       <div className="app">
         <h1>Movie <span className='watcher'>Watcher</span></h1>
         <NavBarContainer />
+
         <Switch>
           <Route path='/favorites' component={FavoritesContainer} />
           <Route path='/signup' render={({ history }) => <SignupContainer history={history}/>} />
@@ -85,10 +87,9 @@ export default class App extends Component {
 
 }} />
 
-
-
           <Route path='/' render={({ history }) => <MovieListContainer history={history}/>} />
         </Switch>
+
         {this.props.children}
       </div>
     )
