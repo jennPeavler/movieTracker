@@ -20,7 +20,7 @@ class LogOff extends Component {
 
   render() {
     return(
-      <section className = "login-page">
+      <section className = "logoff-page">
         <div className="logoff-warning">
           Are you sure you want to log off?
         </div>

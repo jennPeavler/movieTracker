@@ -1,5 +1,10 @@
 .movie-details{
   width:100%;
+  font-family: sans-serif;
+  font-weight: 100;
+  max-width: 750px;
+  margin: 5px auto;
+
 }
 
 .movie-details-img{
@@ -22,4 +27,8 @@
   margin: 0px auto;
   align-items: flex-start;
   flex-direction: column;
+}
+
+#movie-details-overview{
+  font-size: 18px;
 }

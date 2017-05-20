@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-// import styles from './Login.css'
+// import styless from './Logic.css'
+import styles from './Login.css'
 
 class Login extends Component {
   constructor(props){
