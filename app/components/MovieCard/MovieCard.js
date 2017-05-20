@@ -38,24 +38,16 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
   const buttonClass = isFavorite === "not-favorite" ?
   "button-not-favorite" : "button-favorite"
 
+  const starImg = isFavorite ==="not-favorite"?
+  'https://wallscover.com/images/star-wallpaper-2.jpg':'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/2000px-Gold_Star.svg.png'
+
   return(
     <div className = {isFavorite}>
       <img onClick={() => changePath(movieInfo)}
            src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
       <button className={buttonClass}
               onClick={()=>{logFavorites()}}>
-        <span className="star-img"></span>{buttonText}
-      </button>
-    </div>
-  )
-
-  return(
-    <div className="movie-card">
-      <img onClick={() => changePath(movieInfo)}
-           src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
-      <button onClick={() => {
-        handleFavorites(index)
-        logFavorites()}}>favorite
+        <img id="star-img" src={starImg} /><img id="star-img" src={starImg} /><img id="star-img" src={starImg} />{buttonText}<img id="star-img" src={starImg} /><img id="star-img" src={starImg} /><img id="star-img" src={starImg} />
       </button>
     </div>
   )

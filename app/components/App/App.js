@@ -45,7 +45,6 @@ export default class App extends Component {
   componentDidMount() {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     const fetchMovieRequest = () =>{
-      const data = "" //why is this line here?
       fetch(url)
       .then(response => response.json())
       .then(res => {
@@ -76,11 +75,10 @@ export default class App extends Component {
               isFavorites={this.props.state.favoritesReducer}
               match={match} {...movie} />;
             }
-            return (<div>This idea does not exist! </div>);
+            return (<div>This Movie does not exist! </div>);
           }} />
           <Route path='/' render={({ history }) => <MovieListContainer history={history}/>} />
         </Switch>
-        {this.props.children}
       </div>
     )
   }

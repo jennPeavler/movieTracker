@@ -27,6 +27,8 @@
   opacity: 1;
   border-radius: 14px;
   transition: all .3s;
+  width:305px;
+  height:305px;
 }
 
 .button-favorite {
@@ -42,11 +44,12 @@
   margin-top: 10px;
   background-color: #dcaa19;
   border-radius: 5px;
-  /*background: linear-gradient(to bottom, #dcaa19 0%, #0e0e0e 100%);*/
 }
 
 .button-favorite,
 .button-not-favorite {
+  display: flex;
+  justify-content: space-around;
   height: 30px;
   font-size: 17px;
   font-weight:100;
@@ -70,9 +73,8 @@
  transition: all .6s;
 }
 
-.star-img{
-  /*background-image: url('../MovieCardIcon/Five-pointed_star.jpg');*/
-  background-size: cover;
-  width: 10px;
-  height:10px;
+#star-img{
+  width: 20px;
+  height:20px;
+  margin-right: 3px;
   }
