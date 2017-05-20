@@ -3,7 +3,7 @@ import {removeFavorite} from '../../actions'
 import Favorites     from './Favorites'
 
 const mapStateToProps = state => {
-  return { movies: state.movieReducer, favorites: state.favoritesReducer,user:state.usersReducer }
+  return { movies: state.movieReducer, favorites: state.favoritesReducer, user: state.usersReducer }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -13,6 +13,5 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-
 
 export default connect(mapStateToProps,mapDispatchToProps)(Favorites)
