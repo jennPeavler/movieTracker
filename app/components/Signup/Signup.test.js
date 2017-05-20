@@ -1,10 +1,34 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import fetchMock from 'fetch-mock'
+import { browserHistory } from 'react-router'
 import { shallow, mount } from 'enzyme'
 
 import Signup from './Signup'
 
 describe('Signup functionality', () => {
+
+  const newUserResponse = {
+    data: {
+      email: "tman2272@aol.com",
+      id: 1,
+      name: "taylor",
+      password : "password"
+    }
+  }
+
+  const mockCalls = () => {
+    fetchMock.get('http://localhost:5000/api/users', {
+      status: 200,
+      ok: true,
+      body: newUserResponse
+    })
+    fetchMock.get('*', {
+      status: 200,
+      ok: true,
+      body: newUserResponse
+    })
+  }
 
   it('should have default state', () => {
     const wrapper = mount(<Signup />)
@@ -16,19 +40,22 @@ describe('Signup functionality', () => {
   })
 
   it('should add new users to state', () => {
+    mockCalls()
     const wrapper = mount(<Signup />)
 
-    wrapper.setState({
-      name: 'hello',
-      email: 'there',
-      password: 'h3ll0',
-      retypedPassword: 'h3ll0'
-    })
-    let btn = wrapper.find('button')
-    // btn.simulate('click')
+    const btn = wrapper.find('button')
+    const email = wrapper.find('.signup-email')
+    const password = wrapper.find('.signup-password')
+    const retype = wrapper.find('.signup-retypedPassword')
 
-    // console.log(wrapper.state())
-    // console.log()
-    // expect(wrapper.state('retypedPassword')).toEqual("")
+    email.simulate('change', { target: { value: 'email@email.com'}})
+    password.simulate('change', { target: { value: 'password'}})
+    retype.simulate('change', { target: { value: 'password'}})
+
+    btn.simulate('click')
+
+    expect(wrapper.state('email')).toEqual('email@email.com')
+    expect(wrapper.state('password')).toEqual('password')
+    expect(wrapper.state('retypedPassword')).toEqual('password')
   })
 })
