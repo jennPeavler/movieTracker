@@ -62,9 +62,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-  
       "\\.(css|less)$": "identity-obj-proxy"
     }
   }
-
 }

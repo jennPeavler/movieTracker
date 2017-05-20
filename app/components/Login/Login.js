@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import styless from './Logic.css'
 import styles from './Login.css'
 
 class Login extends Component {
@@ -14,32 +13,32 @@ class Login extends Component {
   logOn() {
     if( this.state.password && this.state.email ){
       let userName = this.state.email.toLowerCase()
-       fetch('http://localhost:5000/api/users/')
-        .then( response => response.json() )
-        .then( res => {
-          let signedOn = false
-           res.data.forEach( user => {
-              if ( user.email === userName.toLowerCase() ){
-                signedOn = true
-                localStorage.setItem("user",user.id)
-                this.props.handleUser({id:user.id})
-                this.props.handleShowName({name:user.name})
-                fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
-                 .then( response => response.json())
-                 .then( res => {
-                   res.data.forEach( movie => {
-                    let movieId = movie.movie_id
-                    this.props.handleAddFavorite(movieId)
-                   })
-                 })
-              }
-          })
-          if( signedOn === false ) {
-            alert('username and password not found')
-          } else {
-            this.props.history.replace('/')
+      fetch('http://localhost:5000/api/users/')
+      .then( response => response.json() )
+      .then( res => {
+        let signedOn = false
+        res.data.forEach( user => {
+          if (user.email === userName){
+            signedOn = true
+            localStorage.setItem("user",user.id)
+            this.props.handleUser({id:user.id})
+            this.props.handleShowName({name:user.name})
+            fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
+            .then( response => response.json())
+            .then( res => {
+              res.data.forEach( movie => {
+                let movieId = movie.movie_id
+                this.props.handleAddFavorite(movieId)
+              })
+            })
           }
         })
+        if( signedOn === false ) {
+          alert('username and password not found')
+        } else {
+          this.props.history.replace('/')
+        }
+      })
     }
   }
 
@@ -51,17 +50,17 @@ class Login extends Component {
           className = "login email"
           value = {this.state.email}
           onChange = { e  => {this.setState({ email: e.target.value })}}
-         />
+        />
         <input
           placeholder = "password"
           className = "password"
           value = {this.state.password}
           onChange = { e => {this.setState({ password: e.target.value })}}
-          />
+        />
         <button
           className = "login-btn submit"
           onClick = { () => { this.logOn() }}>
-        Submit
+          Submit
         </button>
       </section>
     )

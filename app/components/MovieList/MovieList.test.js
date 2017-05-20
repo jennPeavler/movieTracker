@@ -12,7 +12,6 @@ describe('MovieList', () => {
     const totalMovies = movieData.total_movies
 
     expect(wrapper.props().movies.length).toEqual(totalMovies)
-
   })
 
 
