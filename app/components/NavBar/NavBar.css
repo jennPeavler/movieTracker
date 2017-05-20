@@ -1,18 +1,25 @@
-.navBar {
-  margin-bottom: 10px;
+.nav-bar {
+  margin-bottom: 15px;
 }
 
 .nav-link {
-  /*background-color:#fff;*/
   color: white;
-  padding: 5px;
+  padding: 8px;
   background: linear-gradient(to bottom, #646464 0%, #0e0e0e 100%);
   font-weight: 100;
   font-family: sans-serif;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 3px;
+  border-radius: 2px;
 }
+
+
 
 .nav-link:hover {
   color: #DCAA19;
+  border-radius: 7px;
+  transition: all .5s
 }
 
 .center {

@@ -1,7 +1,11 @@
 .app {
   background-color: #565353;
-  /*background: linear-gradient(to bottom, #646464 0%,#0e0e0e 100%);*/
-  
+  max-width: 1325px;
+}
+
+h1{
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .watcher {

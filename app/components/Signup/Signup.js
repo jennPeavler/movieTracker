@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-// import styles from './Signup.css'
+import styles from './Signup.css'
 
 class Signup extends Component {
   constructor(props){
@@ -62,25 +62,25 @@ class Signup extends Component {
       <section className = "signup-page">
         <input
           placeholder = "name"
-          className = "signup-name"
+          className = "user-input"
           value = {this.state.name}
           onChange = {(e) => {this.setState({name: e.target.value})}}
         />
         <input
           placeholder = "email"
-          className = "signup-email"
+          className = "user-input"
           value = {this.state.email}
           onChange = {(e) => {this.setState({email: e.target.value})}}
          />
         <input
           placeholder = "password"
-          className = "signup-password"
+          className = "user-input"
           value = {this.state.password}
           onChange = {(e) => {this.setState({password: e.target.value})}}
           />
         <input
           placeholder = "retype password"
-          className = "signup-retypedPassword"
+          className = "user-input"
           value = {this.state.retypedPassword}
           onChange = {(e) => {this.setState({retypedPassword: e.target.value})}}
         />
