@@ -5,7 +5,6 @@ const showNameReducer = (state="",action) =>{
 
     default:
     return state
-
   }
 }
 

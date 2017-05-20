@@ -13,7 +13,7 @@ import rootReducer from './reducers'
 
 const history = createHistory()
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = createStore(rootReducer, devTools,applyMiddleware(promiseMiddleware))
+const store = createStore(rootReducer, devTools, applyMiddleware(promiseMiddleware))
 
 ReactDOM.render(<Provider store={store}>
                   <Router history={history} >

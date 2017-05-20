@@ -24,12 +24,12 @@ class Signup extends Component {
                 email: this.state.email,
                 password: this.state.password
               })
-            })
-        .then((response) => response.json())
+        })
+        .then(response => response.json())
         .then( res => {
           let id = res.id
           localStorage.setItem("user",id)
-          this.props.handleUser({id})
+          this.props.handleUser({ id })
           this.props.handleShowName({name:this.state.name})
         })
       }
@@ -57,7 +57,6 @@ class Signup extends Component {
   }
 
   render(){
-
     return(
       <section className = "signup-page">
         <input
@@ -71,13 +70,13 @@ class Signup extends Component {
           className = "user-input"
           value = {this.state.email}
           onChange = {(e) => {this.setState({email: e.target.value})}}
-         />
+        />
         <input
           placeholder = "password"
           className = "user-input"
           value = {this.state.password}
           onChange = {(e) => {this.setState({password: e.target.value})}}
-          />
+        />
         <input
           placeholder = "retype password"
           className = "user-input"
@@ -85,13 +84,12 @@ class Signup extends Component {
           onChange = {(e) => {this.setState({retypedPassword: e.target.value})}}
         />
         <button
-        className="signup-submit"
-         onClick={() => {
-           this.validateInfo()
-           this.logInfo()
-
-         }}>
-        Submit
+          className="signup-submit"
+          onClick={() => {
+            this.validateInfo()
+            this.logInfo()
+          }}>
+          Submit
         </button>
       </section>
     )
