@@ -1,9 +1,8 @@
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
-import styles from  './Favorites.css'
 
-const Favorites = ({ movies, favorites, handleFavorites, user,history }) => {
-  let list = movies.filter( movie => {
+const Favorites = ({ movies, favorites, handleFavorites, user, history }) => {
+  let list = movies.filter((movie) => {
     return favorites.includes(movie.id)
   })
 

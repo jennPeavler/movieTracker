@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from  './MovieCard.css'
 
 const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, user, isFavorite, changePath}) => {
 
@@ -40,22 +39,23 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
 
   return(
     <div className = {isFavorite}>
-      <img onClick={() => changePath(movieInfo)}
+      <img onClick = {() => changePath(movieInfo)}
            src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
-      <button className={buttonClass}
-              onClick={()=>{logFavorites()}}>
-        <span className="star-img"></span>{buttonText}
+      <button className = {buttonClass}
+              onClick = {() => {logFavorites()}}>
+        <span className = "star-img"></span>{buttonText}
       </button>
     </div>
   )
 
   return(
-    <div className="movie-card">
-      <img onClick={() => changePath(movieInfo)}
-           src ={`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
-      <button onClick={() => {
+    <div className = "movie-card">
+      <img onClick = {() => changePath(movieInfo)}
+           src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
+      <button onClick = {() => {
         handleFavorites(index)
-        logFavorites()}}>favorite
+        logFavorites()}}>
+        favorite
       </button>
     </div>
   )
