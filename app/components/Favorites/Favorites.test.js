@@ -5,7 +5,7 @@
 import React, { Component } from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Login from './Login'
+import Login from '../Login/Login'
 
 describe('Login functionality', () => {
 
