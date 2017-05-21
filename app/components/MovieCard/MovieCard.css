@@ -22,12 +22,11 @@
   width: 300px;
 }
 
-.not-favorite img:hover , .favorite img:hover{
+.movie-image:hover{
   opacity: 1;
   border-radius: 14px;
   transition: all .3s;
-  width:303px;
-  height:303px;
+  width: 300px;
 }
 
 .button-favorite {
