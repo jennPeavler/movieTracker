@@ -4,11 +4,10 @@
   font-weight: 100;
   max-width: 750px;
   margin: 5px auto;
-
 }
 
 .movie-details-img{
-  width:320px;
+  width:300px;
   height:400px
 }
 
@@ -21,14 +20,21 @@
   color: #dcaa19
 }
 
+
+
 .movie-details-info-container{
   display: flex;
-  width: 80%;
+  width: 35%;
   margin: 0px auto;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 
 #movie-details-overview{
   font-size: 18px;
+}
+
+.movie-details-info-container p {
+  margin-top: 0;
+  margin-bottom: 2px;
 }

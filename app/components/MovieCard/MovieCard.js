@@ -33,15 +33,12 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
 
   const buttonText = isFavorite === "not-favorite" ?
     "favorite" : "unfavorite"
-
   const buttonClass = isFavorite === "not-favorite" ?
     "button-not-favorite" : "button-favorite"
-
   const imageClass = isFavorite == "not-favorite" ?
     "hidden" : "star-icon"
 
-  const starImg = isFavorite ==="not-favorite" ?
-  'https://wallscover.com/images/star-wallpaper-2.jpg':'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/2000px-Gold_Star.svg.png'
+  const starImg = 'https://wallscover.com/images/star-wallpaper-2.jpg'
 
   return(
     <div className = {isFavorite}>
