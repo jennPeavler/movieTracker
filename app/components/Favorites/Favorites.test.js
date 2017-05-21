@@ -34,7 +34,6 @@ it('should render two cards if there are two matching favorites', () => {
   const wrapper = mount(<Favorites movies={movieData.movies} favorites={[166426, 283995]}/>)
   const found = wrapper.find('MovieCard')
   const first = wrapper.find('MovieCard').first()
-  console.log(wrapper.debug())
 
   expect(found.length).toEqual(2)
   expect(first.length).toEqual(1)
