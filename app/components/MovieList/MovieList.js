@@ -10,7 +10,6 @@ const MovieList = (props) => {
 
   let renderCard = props.movies ?
     props.movies.map(( movie , i ) => {
-      console.log(movie)
       let classname = "not-favorite"
       if(props.favorites.length) {
         classname = props.favorites.includes(movie.id) ? "favorite" : "not-favorite"
