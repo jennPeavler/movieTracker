@@ -74,11 +74,10 @@ export default class App extends Component {
               isFavorites={this.props.state.favoritesReducer}
               match={match} {...movie} />;
             }
-            return (<div>This idea does not exist! </div>);
+            return (<div>This Movie does not exist! </div>);
           }} />
           <Route path='/' render={({ history }) => <MovieListContainer history={history}/>} />
         </Switch>
-        {this.props.children}
       </div>
     )
   }
