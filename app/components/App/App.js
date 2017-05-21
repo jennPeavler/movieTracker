@@ -10,7 +10,6 @@ import SignupContainer from '../Signup/SignupContainer.js'
 import LoginContainer from '../Login/LoginContainer.js'
 import LogOffContainer from '../LogOff/LogOffContainer.js'
 import NavBarContainer from '../NavBar/NavBarContainer'
-import styles from './App.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -32,7 +31,7 @@ export default class App extends Component {
         fetch('http://localhost:5000/api/users/')
         .then(response => response.json() )
         .then(res => {
-          res.data.forEach(i =>{
+          res.data.forEach(i => {
             if(i.id === id){
               this.props.handleShowName({ name: i.name })
             }
@@ -45,7 +44,6 @@ export default class App extends Component {
   componentDidMount() {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     const fetchMovieRequest = () =>{
-      const data = "" //why is this line here?
       fetch(url)
       .then(response => response.json())
       .then(res => {

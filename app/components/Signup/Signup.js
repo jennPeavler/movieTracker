@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 
-import styles from './Signup.css'
-
 class Signup extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name:"",
-      email:"",
-      password:"",
-      retypedPassword:""
+      name: "",
+      email: "",
+      password: "",
+      retypedPassword: ""
     }
   }
 
@@ -25,12 +23,12 @@ class Signup extends Component {
                 password: this.state.password
               })
         })
-        .then(response => response.json())
-        .then( res => {
+        .then( (response) => response.json())
+        .then( (res) => {
           let id = res.id
-          localStorage.setItem("user",id)
+          localStorage.setItem("user", id)
           this.props.handleUser({ id })
-          this.props.handleShowName({name:this.state.name})
+          this.props.handleShowName({name: this.state.name})
         })
       }
     }
@@ -41,9 +39,9 @@ class Signup extends Component {
       let userEmail = this.state.email.toLowerCase()
       fetch('http://localhost:5000/api/users/')
       .then((response) => response.json())
-      .then(res => {
+      .then((res) => {
         let existingUser = false
-        res.data.forEach( user => {
+        res.data.forEach( (user) => {
           if (user.email === userEmail) {
             existingUser = true
             alert('The user email already exists\nLogin with your account or choose a different Signup email')
@@ -67,19 +65,19 @@ class Signup extends Component {
         />
         <input
           placeholder = "email"
-          className = "user-input"
+          className = "user-input signup-email"
           value = {this.state.email}
           onChange = {(e) => {this.setState({email: e.target.value})}}
         />
         <input
           placeholder = "password"
-          className = "user-input"
+          className = "user-input signup-password"
           value = {this.state.password}
           onChange = {(e) => {this.setState({password: e.target.value})}}
         />
         <input
           placeholder = "retype password"
-          className = "user-input"
+          className = "user-input signup-retypedPassword"
           value = {this.state.retypedPassword}
           onChange = {(e) => {this.setState({retypedPassword: e.target.value})}}
         />

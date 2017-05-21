@@ -1,10 +1,9 @@
 import React from 'react'
-import style from './MovieDetails.css'
 
-const MovieDetails = ({title,overview, vote_average,poster_path,popularity,release_date,vote_count,id}) => {
+const MovieDetails = ({title, overview, vote_average, poster_path, popularity, release_date, vote_count, id}) => {
 
   const handleToggleFavorite = () => {
-    isFavorite==="favorite"? handleAddFavorite(id):handleRemoveFavorite(id)
+    isFavorite === "favorite" ? handleAddFavorite(id) : handleRemoveFavorite(id)
   }
 
   return (
