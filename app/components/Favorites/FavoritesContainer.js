@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
+
 import {removeFavorite} from '../../actions'
-import Favorites     from './Favorites'
+import Favorites from './Favorites'
 
 const mapStateToProps = state => {
   return { movies: state.movieReducer, favorites: state.favoritesReducer, user: state.usersReducer }

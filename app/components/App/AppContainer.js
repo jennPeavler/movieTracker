@@ -1,13 +1,12 @@
 import { connect } from 'react-redux'
 
 import App from './App'
-import { fetchMovieRequest, toggleUser, addFavorite , showName} from '../../actions'
+import { fetchMovieRequest, toggleUser, addFavorite , showName } from '../../actions'
 
 
 function mapDispatchToProps(dispatch) {
   return {
       handleMovieFetch: payload => {
-        console.log(payload, 'movie fetch')
         dispatch(fetchMovieRequest(payload))
       },
       handleUserFetch: id => {
@@ -23,8 +22,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state) => {
-  return{
-    state:state
+  return {
+    state: state
   }
 }
 

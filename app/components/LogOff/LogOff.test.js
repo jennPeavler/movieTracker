@@ -22,11 +22,9 @@ describe('log off functionality', () => {
        }
      }
 
-     window.localStorage = storageMock();
-     const logoffBtn = wrapper.find('.yes')
-     expect(window.localStorage.user).toBe('bob')
-     logoffBtn.simulate('click')
-     console.log(window.localStorage, 'after');
-
+    window.localStorage = storageMock()
+    const logoffBtn = wrapper.find('.yes')
+    expect(window.localStorage.user).toBe('bob')
+    logoffBtn.simulate('click')
   })
 })
