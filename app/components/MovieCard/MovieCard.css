@@ -27,8 +27,8 @@
   opacity: 1;
   border-radius: 14px;
   transition: all .3s;
-  width:305px;
-  height:305px;
+  width:303px;
+  height:303px;
 }
 
 .button-favorite {
@@ -60,6 +60,7 @@
   -moz-box-shadow: 0 0 1px 1px white;
   -webkit-box-shadow: 0 0 1px 1px white;
   border-radius: 5px;
+  height:35px;
 }
 
 .button-not-favorite:hover{

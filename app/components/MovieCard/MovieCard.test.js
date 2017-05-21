@@ -5,7 +5,7 @@ import MovieCard from './MovieCard'
 
 
 
-describe('Login functionality', () => {
+describe('MovieCard', () => {
 
   const wrapper = shallow(
     <MovieCard
@@ -17,12 +17,11 @@ describe('Login functionality', () => {
 it('should render', () => {
 
   expect(wrapper.length).toEqual(1)
+})
 
-
-  })
 it("should have a class name",()=>{
 
-expect(wrapper.hasClass('not-favorite')).toEqual(true)
+  expect(wrapper.hasClass('not-favorite')).toEqual(true)
 })
 
 it('should have a class name that changes if it has been favorited',() => {
@@ -33,9 +32,9 @@ it('should have a class name that changes if it has been favorited',() => {
     movieInfo={'id:12,title:"Apocalayse Now",overview:"goodmovie",release_date:"1978",vote_average:4'}
     />)
     expect(wrapper.hasClass('favorite')).toEqual(true)
-
-
 })
+
+
 
 
 })
