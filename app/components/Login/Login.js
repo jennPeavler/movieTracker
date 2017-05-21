@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styles from './Login.css'
 
 class Login extends Component {
   constructor(props){
@@ -20,9 +19,9 @@ class Login extends Component {
         res.data.forEach( user => {
           if (user.email === userName){
             signedOn = true
-            localStorage.setItem("user",user.id)
-            this.props.handleUser({id:user.id})
-            this.props.handleShowName({name:user.name})
+            localStorage.setItem("user", user.id)
+            this.props.handleUser({id: user.id})
+            this.props.handleShowName({name: user.name})
             fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
             .then( response => response.json())
             .then( res => {

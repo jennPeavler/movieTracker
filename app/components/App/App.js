@@ -10,7 +10,6 @@ import SignupContainer from '../Signup/SignupContainer.js'
 import LoginContainer from '../Login/LoginContainer.js'
 import LogOffContainer from '../LogOff/LogOffContainer.js'
 import NavBarContainer from '../NavBar/NavBarContainer'
-import styles from './App.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -32,7 +31,7 @@ export default class App extends Component {
         fetch('http://localhost:5000/api/users/')
         .then(response => response.json() )
         .then(res => {
-          res.data.forEach(i =>{
+          res.data.forEach(i => {
             if(i.id === id){
               this.props.handleShowName({ name: i.name })
             }

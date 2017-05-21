@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from  './MovieCard.css'
 
 const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, user, isFavorite, changePath}) => {
 
@@ -33,21 +32,31 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
   }
 
   const buttonText = isFavorite === "not-favorite" ?
-   "favorite" : "unfavorite"
+    "favorite" : "unfavorite"
 
   const buttonClass = isFavorite === "not-favorite" ?
-  "button-not-favorite" : "button-favorite"
+    "button-not-favorite" : "button-favorite"
+
+  const imageClass = isFavorite == "not-favorite" ?
+    "hidden" : "star-icon"
 
   const starImg = isFavorite ==="not-favorite"?
   'https://wallscover.com/images/star-wallpaper-2.jpg':'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/2000px-Gold_Star.svg.png'
 
   return(
     <div className = {isFavorite}>
-      <img onClick={() => changePath(movieInfo)}
+      <img onClick = {() => changePath(movieInfo)}
+           className = 'movie-image'
            src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
       <button className={buttonClass}
               onClick={()=>{logFavorites()}}>
-        <img id="star-img" src={starImg} /><img id="star-img" src={starImg} /><img id="star-img" src={starImg} />{buttonText}<img id="star-img" src={starImg} /><img id="star-img" src={starImg} /><img id="star-img" src={starImg} />
+        <img className={imageClass}" src={starImg} />
+        <img className={imageClass} src={starImg} />
+        <img className={imageClass} src={starImg} />
+        {buttonText}
+        <img className={imageClass} src={starImg} />
+        <img className={imageClass} src={starImg} />
+        <img className={imageClass} src={starImg} />
       </button>
     </div>
   )

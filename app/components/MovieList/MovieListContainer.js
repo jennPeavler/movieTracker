@@ -10,10 +10,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
 
-    handleAddFavorite: (id) =>{
+    handleAddFavorite: (id) => {
       dispatch(addFavorite(id))
     },
-    handleRemoveFavorite: (id) =>{
+    handleRemoveFavorite: (id) => {
       dispatch(removeFavorite(id))
     }
   }
