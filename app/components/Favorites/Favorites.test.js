@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { shallow, mount } from 'enzyme'
 import ReactDOM from 'react-dom'
-import fetchMock from 'fetch-mock'
 import { browserHistory } from 'react-router'
 
 import Favorites from './Favorites'
