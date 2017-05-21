@@ -8,33 +8,31 @@ import { NavBar } from './NavBar'
 
 describe('NavBar ', () => {
 
-
   const wrapper = shallow(
     <NavBar
     name={'name:"CHARLIE"'}
     userName={'name:"CHARLES"'}/>)
 
-it('should render', () => {
+  it('should render', () => {
+    expect(wrapper.length).toEqual(1)
+  })
 
-  expect(wrapper.length).toEqual(1)
+  it("should render diffrent NavLinks with the user being logged in",()=>{
+
+    const wrapper = shallow(
+      <NavBar
+      name={'name:"CHARLIE"'}
+      userName={'name:"CHARLES"'}/>)
+
+      expect(wrapper.find('NavLink').length).toEqual(3)
+
+    // expect(wrapper.find('.nav-link').first().node.props.children).toEqual(' Home ')
+    //
+    // expect(wrapper.find('.center').node.props.children).toEqual(" Favorites ")
+    //
+    // expect(wrapper.find('.nav-link').last().node.props.children).toEqual(" Logoff ")
+  })
 })
-
-it.only("should render diffrent NavLinks with the user being logged in",()=>{
-
-  const wrapper = shallow(
-    <NavBar
-    name={'name:"CHARLIE"'}
-    userName={'name:"CHARLES"'}/>)
-
-console.log(wrapper.props())
-  expect(wrapper.find('NavLink').length).toEqual(3)
-
-  // expect(wrapper.find('.nav-link').first().node.props.children).toEqual(' Home ')
-  //
-  // expect(wrapper.find('.center').node.props.children).toEqual(" Favorites ")
-  //
-  // expect(wrapper.find('.nav-link').last().node.props.children).toEqual(" Logoff ")
-
 
 describe('NavBar functionality', () => {
 
@@ -67,23 +65,19 @@ describe('NavBar functionality', () => {
     expect(last.props().children).toEqual(" Login ")
   })
 
-it("should render diffrent NavLinks with the user being logged off",()=>{
+  it("should render diffrent NavLinks with the user being logged off",()=>{
 
-const wrapper = shallow(
-  <NavBar
-  name={'name:""'}
-  userName = {'name:""'}
-/>)
-expect(wrapper.find('NavLink').length).toEqual(3)
+    const wrapper = shallow(
+      <NavBar
+      name={'name:""'}
+      userName = {'name:""'}
+    />)
+    
+    expect(wrapper.find('NavLink').length).toEqual(3)
+    expect(wrapper.find('.nav-link').first().node.props.children).toEqual(' Home ')
+    expect(wrapper.find('.center').node.props.children).toEqual(" Signup ")
+    expect(wrapper.find('.nav-link').last().node.props.children).toEqual(" Login ")
 
-expect(wrapper.find('.nav-link').first().node.props.children).toEqual(' Home ')
-
-expect(wrapper.find('.center').node.props.children).toEqual(" Signup ")
-
-expect(wrapper.find('.nav-link').last().node.props.children).toEqual(" Login ")
-
-})
-
-
+  })
 
 })
