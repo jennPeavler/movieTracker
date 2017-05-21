@@ -50,7 +50,7 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
            src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
       <button className={buttonClass}
               onClick={()=>{logFavorites()}}>
-        <img className={imageClass}" src={starImg} />
+        <img className={imageClass} src={starImg} />
         <img className={imageClass} src={starImg} />
         <img className={imageClass} src={starImg} />
         {buttonText}
