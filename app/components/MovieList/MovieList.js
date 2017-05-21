@@ -14,7 +14,6 @@ const MovieList = (props) => {
       if(props.favorites.length) {
         classname = props.favorites.includes(movie.id) ? "favorite" : "not-favorite"
       }
-      // console.log(movie)
       return (
         <MovieCard
         changePath = {changePath}

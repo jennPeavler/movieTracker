@@ -32,33 +32,32 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
   }
 
   const buttonText = isFavorite === "not-favorite" ?
-   "favorite" : "unfavorite"
+    "favorite" : "unfavorite"
 
   const buttonClass = isFavorite === "not-favorite" ?
-  "button-not-favorite" : "button-favorite"
+    "button-not-favorite" : "button-favorite"
+
+  const imageClass = isFavorite == "not-favorite" ?
+    "hidden" : "star-icon"
 
   return(
     <div className = {isFavorite}>
       <img onClick = {() => changePath(movieInfo)}
+           className = 'movie-image'
            src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
       <button className = {buttonClass}
               onClick = {() => {logFavorites()}}>
-        <span className = "star-img"></span>{buttonText}
+        <img className={imageClass} src={'https://cdn.iconscout.com/public/images/icon/premium/png-512/star-3c6072517e6d100c-512x512.png'}/>
+        <img className={imageClass} src={'https://cdn.iconscout.com/public/images/icon/premium/png-512/star-3c6072517e6d100c-512x512.png'}/>
+        <img className={imageClass} src={'https://cdn.iconscout.com/public/images/icon/premium/png-512/star-3c6072517e6d100c-512x512.png'}/>
+        {buttonText}
+        <img className={imageClass} src={'https://cdn.iconscout.com/public/images/icon/premium/png-512/star-3c6072517e6d100c-512x512.png'}/>
+        <img className={imageClass} src={'https://cdn.iconscout.com/public/images/icon/premium/png-512/star-3c6072517e6d100c-512x512.png'}/>
+        <img className={imageClass} src={'https://cdn.iconscout.com/public/images/icon/premium/png-512/star-3c6072517e6d100c-512x512.png'}/>
       </button>
     </div>
   )
 
-  return(
-    <div className = "movie-card">
-      <img onClick = {() => changePath(movieInfo)}
-           src = {`https://image.tmdb.org/t/p/original${movieInfo.poster_path}`}/>
-      <button onClick = {() => {
-        handleFavorites(index)
-        logFavorites()}}>
-        favorite
-      </button>
-    </div>
-  )
 }
 
 export default MovieCard

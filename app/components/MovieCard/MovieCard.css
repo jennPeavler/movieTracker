@@ -1,5 +1,4 @@
 
-
 .not-favorite, .favorite{
   display: flex;
   flex-direction: column;
@@ -16,7 +15,7 @@
   background-color: #dcaa19;
 }
 
-.not-favorite img, .favorite img {
+.movie-image {
   height:300px;
   width: 300px;
   opacity:.85;
@@ -35,6 +34,8 @@
   border: none;
   margin-top: 10px;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .button-not-favorite {
@@ -42,7 +43,7 @@
   margin-top: 10px;
   background-color: #dcaa19;
   border-radius: 5px;
-  /*background: linear-gradient(to bottom, #dcaa19 0%, #0e0e0e 100%);*/
+
 }
 
 .button-favorite,
@@ -70,9 +71,17 @@
  transition: all .6s;
 }
 
-.star-img{
-  /*background-image: url('../MovieCardIcon/Five-pointed_star.jpg');*/
+.star-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*.star-img{
   background-size: cover;
   width: 10px;
   height:10px;
-  }
+  }*/
