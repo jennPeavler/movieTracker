@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import ReactDOM from 'react-dom'
 import { browserHistory } from 'react-router'
 
-import {NavBar} from './NavBar'
+import { NavBar } from './NavBar'
 
 describe('NavBar functionality', () => {
 
