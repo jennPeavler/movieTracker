@@ -25,6 +25,7 @@ describe('log off functionality', () => {
          },
        }
      }
+
      window.localStorage = storageMock();
      const logoffBtn = wrapper.find('.yes')
 

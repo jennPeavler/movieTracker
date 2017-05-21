@@ -79,8 +79,8 @@ describe('favorite functionality', () => {
   it("should render a list of favorites if any ",()=>{
     const wrapper = shallow(
       <Favorites
-        movies={[{id:12},{id:15},{id:17}]}
-        favorites={[12,15]}
+        movies={[{id: 12}, {id: 15}, {id: 17}]}
+        favorites={[12, 15]}
         user={2}/>)
     expect(wrapper.find('MovieCard').length).toEqual(2)
   })
@@ -88,8 +88,8 @@ describe('favorite functionality', () => {
   it("should have a class name if favorites are available",()=>{
     const wrapper = shallow(
       <Favorites
-        movies={[{id:12},{id:15},{id:17}]}
-        favorites={[12,15]}
+        movies={[{id: 12}, {id: 15}, {id: 17}]}
+        favorites={[12, 15]}
         user={2}/>)
     expect(wrapper.node.props.className).toEqual('favorites-list')
   })

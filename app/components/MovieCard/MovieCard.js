@@ -37,6 +37,7 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
     "button-not-favorite" : "button-favorite"
   const imageClass = isFavorite == "not-favorite" ?
     "hidden" : "star-icon"
+
   const starImg = 'https://wallscover.com/images/star-wallpaper-2.jpg'
 
   return(

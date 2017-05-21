@@ -17,7 +17,6 @@ export default class App extends Component {
   }
 
   componentWillMount(){
-    console.log('in componentWillMount');
     const user = localStorage.getItem("user")
     if(user){
       const id = Number(user)
@@ -43,17 +42,15 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    console.log('in componentDidMount');
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     const fetchMovieRequest = () =>{
       fetch(url)
       .then(response => response.json())
       .then(res => {
-        console.log('in api call')
         this.props.handleMovieFetch(res.results)
       })
       .catch(response => {
-        console.log('error in api call')
+        // console.log('error in api call')
         this.props.handleMovieFetch('error in api call')
         return 'error in api call'
       })
@@ -74,7 +71,7 @@ export default class App extends Component {
           <Route path='/logoff' render={({ history }) => <LogOffContainer history={history}/>} />
           <Route path='/:id' render={({ match }) => {
             const movie = this.props.state.movieReducer.find((movie) =>
-             movie.id === parseInt(match.params.id));
+             movie.id === parseInt(match.params.id))
             if (movie) {
               return <MovieDetails
               handleAddFavorite={this.props.handleAddFavorite}
@@ -82,7 +79,7 @@ export default class App extends Component {
               isFavorites={this.props.state.favoritesReducer}
               match={match} {...movie} />;
             }
-            return (<div>This Movie does not exist! </div>);
+            return (<div>This Movie does not exist! </div>)
           }} />
           <Route path='/' render={({ history }) => <MovieListContainer history={history}/>} />
         </Switch>

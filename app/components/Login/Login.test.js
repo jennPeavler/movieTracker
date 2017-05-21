@@ -45,9 +45,9 @@ describe('Login functionality', () => {
     mockCalls()
     const wrapper = mount(<Login />)
 
-    let email = wrapper.find('.email')
-    let password = wrapper.find('.password')
-    let btn = wrapper.find('button')
+    const email = wrapper.find('.email')
+    const password = wrapper.find('.password')
+    const btn = wrapper.find('button')
 
     email.simulate('change', { target: { value: 'tman2272@aol.com'}})
     password.simulate('change', { target: { value: 'password'}})

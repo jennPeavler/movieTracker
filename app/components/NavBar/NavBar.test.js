@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router'
 import { NavBar } from './NavBar'
 
 
-describe('NavBar ', () => {
+describe('NavBar functionality', () => {
 
   const wrapper = shallow(
     <NavBar
@@ -25,16 +25,7 @@ describe('NavBar ', () => {
       userName={'name:"CHARLES"'}/>)
 
       expect(wrapper.find('NavLink').length).toEqual(3)
-
-    // expect(wrapper.find('.nav-link').first().node.props.children).toEqual(' Home ')
-    //
-    // expect(wrapper.find('.center').node.props.children).toEqual(" Favorites ")
-    //
-    // expect(wrapper.find('.nav-link').last().node.props.children).toEqual(" Logoff ")
   })
-})
-
-describe('NavBar functionality', () => {
 
   it('should have 3 links', () => {
     const wrapper = shallow(<NavBar name={{id: 3}} userName={{name: 'test'}} />)
@@ -72,12 +63,10 @@ describe('NavBar functionality', () => {
       name={'name:""'}
       userName = {'name:""'}
     />)
-    
+
     expect(wrapper.find('NavLink').length).toEqual(3)
     expect(wrapper.find('.nav-link').first().node.props.children).toEqual(' Home ')
     expect(wrapper.find('.center').node.props.children).toEqual(" Signup ")
     expect(wrapper.find('.nav-link').last().node.props.children).toEqual(" Login ")
-
   })
-
 })

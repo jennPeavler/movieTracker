@@ -24,5 +24,4 @@ const MovieDetails = ({title, overview, vote_average, poster_path, popularity, r
   )
 }
 
-
 export default MovieDetails
