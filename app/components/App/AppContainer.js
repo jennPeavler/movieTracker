@@ -7,6 +7,7 @@ import { fetchMovieRequest, toggleUser, addFavorite , showName} from '../../acti
 function mapDispatchToProps(dispatch) {
   return {
       handleMovieFetch: payload => {
+        console.log(payload, 'movie fetch')
         dispatch(fetchMovieRequest(payload))
       },
       handleUserFetch: id => {

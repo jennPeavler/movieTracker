@@ -17,6 +17,7 @@ export default class App extends Component {
   }
 
   componentWillMount(){
+    console.log('in componentWillMount');
     const user = localStorage.getItem("user")
     if(user){
       const id = Number(user)
@@ -42,12 +43,19 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    console.log('in componentDidMount');
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
     const fetchMovieRequest = () =>{
       fetch(url)
       .then(response => response.json())
       .then(res => {
+        console.log('in api call')
         this.props.handleMovieFetch(res.results)
+      })
+      .catch(response => {
+        console.log('error in api call')
+        this.props.handleMovieFetch('error in api call')
+        return 'error in api call'
       })
     }
 
