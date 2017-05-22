@@ -12,9 +12,7 @@ class Signup extends Component {
   }
 
   logInfo() {
-    console.log(this.state.password, '<sign pass, sign re>', this.state.retypedPassword)
     if( this.state.password === this.state.retypedPassword ) {
-      console.log(this.state.password, '<2 sign pass, sign re>', this.state.retypedPassword )
       if( this.state.name !== '' && this.state.email !== '' ) {
         fetch("api/users/new", {
           method: "POST",
@@ -27,7 +25,7 @@ class Signup extends Component {
         })
         .then( (response) => response.json())
         .then( (res) => {
-          let id = res.id
+          const id = res.id
           localStorage.setItem("user", id)
           this.props.handleUser({ id })
           this.props.handleShowName({name: this.state.name})

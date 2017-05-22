@@ -31,12 +31,21 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
     }
   }
 
-  const buttonText = isFavorite === "not-favorite" ?
-    "favorite" : "unfavorite"
-  const buttonClass = isFavorite === "not-favorite" ?
-    "button-not-favorite" : "button-favorite"
-  const imageClass = isFavorite == "not-favorite" ?
-    "hidden" : "star-icon"
+  let buttonText
+  let buttonClass
+  let imageClass
+
+  switch (isFavorite){
+    case "not-favorite":
+      buttonText = "favorite"
+      buttonClass = "button-not-favorite"
+      imageClass = "hidden"
+      break;
+    default:
+      buttonText = "unfavorite"
+      buttonClass = "button-favorite"
+      imageClass = "star-icon"
+  }
 
   const starImg = 'https://wallscover.com/images/star-wallpaper-2.jpg'
 
