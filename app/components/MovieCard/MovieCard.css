@@ -1,19 +1,12 @@
 
 .not-favorite, .favorite{
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   box-shadow: 1px 1px 1px #dcaa19;
   display: flex;
   flex-direction: column;
   margin: 5px;
   padding: 10px;
-}
-
-.not-favorite {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.favorite {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .movie-image {
@@ -57,12 +50,10 @@
 }
 
 .button-favorite:hover {
+  border-radius: 5px;
   box-shadow: 0 0 1px 1px white;
   -moz-box-shadow: 0 0 1px 1px white;
   -webkit-box-shadow: 0 0 1px 1px white;
-  border-radius: 5px;
-  height:35px;
-
 }
 
 .button-not-favorite:hover{
@@ -70,9 +61,7 @@
   box-shadow: 0 0 1px 1px #dcaa19;
   -moz-box-shadow: 0 0 1px 1px #dcaa19;
   -webkit-box-shadow: 0 0 1px 1px #dcaa19;
-  height:35px;
   transition: all .6s;
-
 }
 
 .button-favorite:hover{
