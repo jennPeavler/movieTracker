@@ -18,7 +18,7 @@ export default class App extends Component {
 
   componentWillMount(){
     const user = localStorage.getItem("user")
-    if(user){
+    if(user !== undefined){
       const id = Number(user)
       this.props.handleUserFetch({ id })
       fetch(`http://localhost:5000/api//users/${ id }/favorites`)

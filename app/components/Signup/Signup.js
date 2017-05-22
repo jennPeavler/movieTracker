@@ -12,7 +12,9 @@ class Signup extends Component {
   }
 
   logInfo() {
-    if( this.state.password.value === this.state.retypedPassword.value ) {
+    console.log(this.state.password, '<sign pass, sign re>', this.state.retypedPassword)
+    if( this.state.password === this.state.retypedPassword ) {
+      console.log(this.state.password, '<2 sign pass, sign re>', this.state.retypedPassword )
       if( this.state.name !== '' && this.state.email !== '' ) {
         fetch("api/users/new", {
           method: "POST",
@@ -35,22 +37,24 @@ class Signup extends Component {
   }
 
   validateInfo() {
-    if(this.state.password && this.state.email){
-      let userEmail = this.state.email.toLowerCase()
-      fetch('http://localhost:5000/api/users/')
-      .then((response) => response.json())
-      .then((res) => {
-        let existingUser = false
-        res.data.forEach( (user) => {
-          if (user.email === userEmail) {
-            existingUser = true
-            alert('The user email already exists\nLogin with your account or choose a different Signup email')
+    if(this.state.password === this.state.retypedPassword){
+      if(this.state.password && this.state.email){
+        let userEmail = this.state.email.toLowerCase()
+        fetch('http://localhost:5000/api/users/')
+        .then((response) => response.json())
+        .then((res) => {
+          let existingUser = false
+          res.data.forEach( (user) => {
+            if (user.email === userEmail) {
+              existingUser = true
+              alert('The user email already exists\nLogin with your account or choose a different Signup email')
+            }
+          })
+          if (existingUser === false) {
+            this.props.history.replace('/')
           }
         })
-        if (existingUser === false) {
-          this.props.history.replace('/')
-        }
-      })
+      }
     }
   }
 
@@ -84,8 +88,8 @@ class Signup extends Component {
         <button
           className="signup-submit"
           onClick={() => {
-            this.validateInfo()
             this.logInfo()
+            this.validateInfo()
           }}>
           Submit
         </button>

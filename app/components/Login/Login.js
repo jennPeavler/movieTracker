@@ -11,13 +11,14 @@ class Login extends Component {
 
   logOn() {
     if( this.state.password && this.state.email ){
-      let userName = this.state.email.toLowerCase()
+      const userName = this.state.email.toLowerCase()
+      const password = this.state.password.toLowerCase()
       fetch('http://localhost:5000/api/users/')
       .then( response => response.json() )
       .then( res => {
         let signedOn = false
         res.data.forEach( user => {
-          if (user.email === userName){
+          if (user.email === userName && user.password === password){
             signedOn = true
             localStorage.setItem("user", user.id)
             this.props.handleUser({id: user.id})
