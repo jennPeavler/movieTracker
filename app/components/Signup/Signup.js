@@ -13,47 +13,57 @@ class Signup extends Component {
 
   logInfo() {
     if( this.state.password === this.state.retypedPassword ) {
-      if( this.state.name !== '' && this.state.email !== '' ) {
-        fetch("api/users/new", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({
-                name: this.state.name,
-                email: this.state.email,
-                password: this.state.password
-              })
-        })
-        .then( (response) => response.json())
-        .then( (res) => {
-          const id = res.id
-          localStorage.setItem("user", id)
-          this.props.handleUser({ id })
-          this.props.handleShowName({name: this.state.name})
-        })
-      }
+      this.postNewUser()
+    } else {
+      alert('your passwords do not match')
+    }
+  }
+
+  postNewUser() {
+    if( this.state.name !== '' && this.state.email !== '' ) {
+      fetch("api/users/new", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+              name: this.state.name,
+              email: this.state.email,
+              password: this.state.password
+            })
+      })
+      .then( (response) => response.json())
+      .then( (res) => {
+        let id = res.id
+        localStorage.setItem("user", id)
+        this.props.handleUser({ id })
+        this.props.handleShowName({name: this.state.name})
+      })
     }
   }
 
   validateInfo() {
     if(this.state.password === this.state.retypedPassword){
       if(this.state.password && this.state.email){
-        let userEmail = this.state.email.toLowerCase()
-        fetch('http://localhost:5000/api/users/')
-        .then((response) => response.json())
-        .then((res) => {
-          let existingUser = false
-          res.data.forEach( (user) => {
-            if (user.email === userEmail) {
-              existingUser = true
-              alert('The user email already exists\nLogin with your account or choose a different Signup email')
-            }
-          })
-          if (existingUser === false) {
-            this.props.history.replace('/')
-          }
-        })
+        this.fetchUsers()
       }
     }
+  }
+
+  fetchUsers() {
+    let userEmail = this.state.email.toLowerCase()
+    fetch('http://localhost:5000/api/users/')
+    .then((response) => response.json())
+    .then((res) => {
+      let existingUser = false
+      res.data.forEach( (user) => {
+        if (user.email === userEmail) {
+          existingUser = true
+          alert('The user email already exists\nLogin with your account or choose a different Signup email')
+        }
+      })
+      if (existingUser === false) {
+        this.props.history.replace('/')
+      }
+    })
   }
 
   render(){

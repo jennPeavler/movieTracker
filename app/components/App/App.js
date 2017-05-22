@@ -10,6 +10,7 @@ import SignupContainer from '../Signup/SignupContainer.js'
 import LoginContainer from '../Login/LoginContainer.js'
 import LogOffContainer from '../LogOff/LogOffContainer.js'
 import NavBarContainer from '../NavBar/NavBarContainer'
+import fetchFavorites from '../apiCalls'
 
 export default class App extends Component {
   constructor(props) {
@@ -21,42 +22,50 @@ export default class App extends Component {
     if(user !== undefined){
       const id = Number(user)
       this.props.handleUserFetch({ id })
-      fetch(`http://localhost:5000/api//users/${ id }/favorites`)
-      .then(response => response.json())
-      .then(res => {
-        res.data.forEach(movie => {
-          let  movieId = movie.movie_id
-          this.props.handleAddFavorite(movieId)
-        })
-        fetch('http://localhost:5000/api/users/')
-        .then(response => response.json() )
-        .then(res => {
-          res.data.forEach(i => {
-            if(i.id === id){
-              this.props.handleShowName({ name: i.name })
-            }
-          })
-        })
-      })
+      this.fetchFavorites(id)
+      this.fetchUsers(id)
     }
+  }
+
+
+  fetchFavorites(id) {
+    fetch(`http://localhost:5000/api//users/${ id }/favorites`)
+    .then(response => response.json())
+    .then(res => {
+      res.data.forEach(movie => {
+        let  movieId = movie.movie_id
+        this.props.handleAddFavorite(movieId)
+      })
+    })
+  }
+
+  fetchUsers(id) {
+    fetch('http://localhost:5000/api/users/')
+    .then(response => response.json())
+    .then(res => {
+      res.data.forEach(i => {
+        if(i.id === id){
+          this.props.handleShowName({ name: i.name })
+        }
+      })
+    })
   }
 
   componentDidMount() {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=4cdebcbe2bc4761f0c631321a04c6465&language=en-US&page=1`
-    const fetchMovieRequest = () =>{
-      fetch(url)
-      .then(response => response.json())
-      .then(res => {
-        this.props.handleMovieFetch(res.results)
-      })
-      .catch(response => {
-        // console.log('error in api call')
-        this.props.handleMovieFetch('error in api call')
-        return 'error in api call'
-      })
-    }
+    this.fetchMovieRequest(url)
+  }
 
-    fetchMovieRequest()
+  fetchMovieRequest(url) {
+    fetch(url)
+    .then(response => response.json())
+    .then(res => {
+      this.props.handleMovieFetch(res.results)
+    })
+    .catch(response => {
+      this.props.handleMovieFetch('error in api call')
+      return 'error in api call'
+    })
   }
 
   render() {

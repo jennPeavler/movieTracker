@@ -5,41 +5,57 @@ class Login extends Component {
     super(props)
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      signedOn: false
     }
   }
 
   logOn() {
     if( this.state.password && this.state.email ){
-      const userName = this.state.email.toLowerCase()
-      const password = this.state.password.toLowerCase()
-      fetch('http://localhost:5000/api/users/')
-      .then( response => response.json() )
-      .then( res => {
-        let signedOn = false
-        res.data.forEach( user => {
-          if (user.email === userName && user.password === password){
-            signedOn = true
-            localStorage.setItem("user", user.id)
-            this.props.handleUser({id: user.id})
-            this.props.handleShowName({name: user.name})
-            fetch(`http://localhost:5000/api//users/${user.id}/favorites`)
-            .then( response => response.json())
-            .then( res => {
-              res.data.forEach( movie => {
-                let movieId = movie.movie_id
-                this.props.handleAddFavorite(movieId)
-              })
-            })
-          }
-        })
-        if( signedOn === false ) {
-          alert('username and password not found')
-        } else {
-          this.props.history.replace('/')
-        }
-      })
+      this.fetchUsers()
     }
+  }
+
+  fetchUsers() {
+    fetch('http://localhost:5000/api/users/')
+    .then( response => response.json() )
+    .then( userData => {
+      this.validateUser(userData)
+    })
+  }
+
+  validateUser(userData) {
+    userData.data.forEach( user => {
+      this.logInUser(user)
+    })
+    if( this.state.signedOn === false ) {
+      alert('username and password not found')
+    } else {
+      this.props.history.replace('/')
+    }
+  }
+
+  logInUser(user) {
+    const userName = this.state.email.toLowerCase()
+    const password = this.state.password.toLowerCase()
+    if (user.email === userName && user.password === password){
+      this.state.signedOn = true
+      localStorage.setItem("user", user.id)
+      this.props.handleUser({id: user.id})
+      this.props.handleShowName({name: user.name})
+      this.fetchFavorites(user.id)
+    }
+  }
+
+  fetchFavorites (userId) {
+    fetch(`http://localhost:5000/api//users/${userId}/favorites`)
+    .then( response => response.json())
+    .then( res => {
+      res.data.forEach( movie => {
+        let movieId = movie.movie_id
+        this.props.handleAddFavorite(movieId)
+      })
+    })
   }
 
   render() {
