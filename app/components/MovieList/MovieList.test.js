@@ -30,6 +30,4 @@ describe('MovieList', () => {
     expect(found.length).toEqual(totalMovies)
     expect(found.length).toEqual(20)
   })
-
-
 })

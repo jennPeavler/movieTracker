@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
   return{userName:state.showNameReducer}
 }
 

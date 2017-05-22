@@ -8,21 +8,21 @@ export const showName = (name) =>{
 }
 
 export const addFavorite = (id) => {
-  return{
+  return {
     type:'ADD_FAVORITE',
     id
   }
 }
 
 export const removeFavorite = (id) => {
-  return{
+  return {
     type:'REMOVE_FAVORITE',
     id
   }
 }
 
 export const clearFavorite = () => {
-  return{
+  return {
     type:'CLEAR_FAVORITE'
   }
 }
@@ -36,14 +36,14 @@ export const fetchMovieRequest = (response) => {
 }
 
 export const toggleUser = (id) =>{
-  return{
+  return {
     type: 'USER_TOGGLE',
     id
   }
 }
 
 export const logOffUser = (id) =>{
-  return{
+  return {
     type: 'USER_LOGOUT',
     id
   }

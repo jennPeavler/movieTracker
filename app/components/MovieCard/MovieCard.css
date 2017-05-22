@@ -76,3 +76,7 @@
 .hidden {
   display: none;
 }
+
+.logged-on-error {
+  color: #dcaa19;
+}
