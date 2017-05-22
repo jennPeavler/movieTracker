@@ -11,8 +11,8 @@ const Favorites = ({ movies, favorites, handleFavorites, user, history }) => {
     history.replace(`/${route.id}`)
   }
 
-  let renderCard = list.length ?
-    list.map(( movie, i ) => {
+  const renderList = () =>{
+  return  list.map(( movie, i ) => {
       return (
         <MovieCard
         changePath = {changePath}
@@ -23,7 +23,11 @@ const Favorites = ({ movies, favorites, handleFavorites, user, history }) => {
         index={movie.id}
         movieInfo={movie}/>
       )
-    }) : <div className="no-favorites-container">No favorite movies? Come on...</div>
+    })
+  }
+
+  let renderCard = list.length ?
+  renderList(): <div className="no-favorites-container">No favorite movies? Come on...</div>
 
   return(
     <section className="favorites-list">

@@ -52,7 +52,7 @@ describe('log off functionality', () => {
 
      expect(window.localStorage.user).toBe('bob')
      logoffBtn.simulate('click')
-     expect(window.localStorage.user).toBe('bob');
+     expect(window.localStorage.user).toBe('bob')
   })
 
   it('should route to home if user selects no to logging off', () => {
@@ -60,7 +60,7 @@ describe('log off functionality', () => {
     let history = {
       url: 'http://localhost:5000/logoff',
       replace: function(url) {
-        return this.url=url
+        return this.url = url
       }
     }
     const wrapper = mount(<LogOff handleUser={mockFn}

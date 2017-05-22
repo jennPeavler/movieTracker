@@ -8,12 +8,14 @@ const MovieList = (props) => {
     props.history.replace(`/${route.id}`)
   }
 
-  let renderCard = props.movies ?
-    props.movies.map(( movie , i ) => {
+  let moviesList = () => {
+    return props.movies.map(( movie , i ) => {
       let classname = "not-favorite"
+
       if(props.favorites.length) {
         classname = props.favorites.includes(movie.id) ? "favorite" : "not-favorite"
       }
+
       return (
         <MovieCard
         changePath = {changePath}
@@ -25,7 +27,10 @@ const MovieList = (props) => {
         index={movie.id}
         movieInfo={movie}/>
       )
-    }) : <div>loading</div>
+    })
+  }
+
+  let renderCard = props.movies ? moviesList() : <div>loading</div>
 
   return(
     <section className="movie-list">
