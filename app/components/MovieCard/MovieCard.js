@@ -19,7 +19,8 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
            method: "POST",
            headers: {"Content-Type": "application/json"},
            body: JSON.stringify({  movie_id, user_id, title, poster_path, release_date, vote_average, overview })
-         }).then( () => { handleAddFavorite(index)})
+         })
+          .then( () => { handleAddFavorite(index)})
         } else {
           fetch(`/api/users/${user_id}/favorites/${movie_id}`, {
             method: "DELETE",
@@ -46,7 +47,6 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
       buttonClass = "button-favorite"
       imageClass = "star-icon"
   }
-
 
   const starImg = 'https://wallscover.com/images/star-wallpaper-2.jpg'
 

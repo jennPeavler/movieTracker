@@ -4,7 +4,7 @@ import { addFavorite,removeFavorite } from '../../actions'
 import MovieList from './MovieList'
 
 const mapStateToProps = (state) => {
-  return { movies: state.movieReducer,user:state.usersReducer,favorites:state.favoritesReducer }
+  return { movies: state.movieReducer, user: state.usersReducer, favorites: state.favoritesReducer }
 }
 
 const mapDispatchToProps = (dispatch) => {

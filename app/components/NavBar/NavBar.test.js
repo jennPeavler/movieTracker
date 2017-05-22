@@ -5,13 +5,12 @@ import { browserHistory } from 'react-router'
 
 import { NavBar } from './NavBar'
 
-
 describe('NavBar functionality', () => {
 
   const wrapper = shallow(
     <NavBar
-    name={'name:"CHARLIE"'}
-    userName={'name:"CHARLES"'}/>)
+    name={'name: "CHARLIE"'}
+    userName={'name: "CHARLES"'}/>)
 
   it('should render', () => {
     expect(wrapper.length).toEqual(1)
@@ -56,12 +55,12 @@ describe('NavBar functionality', () => {
     expect(last.props().children).toEqual(" Login ")
   })
 
-  it("should render diffrent NavLinks with the user being logged off",()=>{
+  it("should render diffrent NavLinks with the user being logged off", () => {
 
     const wrapper = shallow(
       <NavBar
-      name={'name:""'}
-      userName = {'name:""'}
+      name={'name: "" '}
+      userName = {'name: "" '}
     />)
 
     expect(wrapper.find('NavLink').length).toEqual(3)

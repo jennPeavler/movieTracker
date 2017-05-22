@@ -4,7 +4,7 @@ import Signup from './Signup'
 import { toggleUser, showName } from '../../actions'
 
 const mapStateToProps = (state) => {
-  return{user: state.user}
+  return {user: state.user}
 }
 
 const mapDispatchToProps = (dispatch) => {
