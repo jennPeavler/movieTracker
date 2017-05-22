@@ -32,8 +32,8 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
   }
 
   let buttonText
-  let buttonClass
-  let imageClass
+  let buttonClass = ""
+  let imageClass = ""
 
   switch (isFavorite){
     case "not-favorite":
@@ -46,6 +46,7 @@ const MovieCard =({movieInfo ,handleAddFavorite, handleRemoveFavorite, index, us
       buttonClass = "button-favorite"
       imageClass = "star-icon"
   }
+
 
   const starImg = 'https://wallscover.com/images/star-wallpaper-2.jpg'
 
