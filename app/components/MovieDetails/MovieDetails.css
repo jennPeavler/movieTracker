@@ -4,11 +4,15 @@
   font-weight: 100;
   max-width: 750px;
   margin: 5px auto;
+  padding-bottom: 20px;
 }
 
 .movie-details-img{
+  border-radius: 15px;
   width:300px;
-  height:400px
+  box-shadow: 1px 1px 1px #dcaa19;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .movie-details-overview{
@@ -17,10 +21,11 @@
 }
 
 .movie-details-category{
-  color: #dcaa19
+  color: #dcaa19;
 }
 
-
+.bottom {
+}
 
 .movie-details-info-container{
   display: flex;
@@ -28,6 +33,10 @@
   margin: 0px auto;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 #movie-details-overview{

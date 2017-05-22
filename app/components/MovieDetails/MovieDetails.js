@@ -18,7 +18,7 @@ const MovieDetails = ({title, overview, vote_average, poster_path, popularity, r
         <p className="movie-details-release"><span className="movie-details-category">release date: </span> {release_date}</p>
         <p className="movie-details-popularity"><span className="movie-details-category">popularity: </span>{popularity}</p>
         <p className="movie-details-vote-average"><span className="movie-details-category">vote average: </span>{vote_average}</p>
-        <p className="movie-details-vote-average"><span className="movie-details-category">vote count: </span>{vote_count}</p>
+        <p className="movie-details-vote-average bottom"><span className="movie-details-category">vote count: </span>{vote_count}</p>
       </div>
     </div>
   )
