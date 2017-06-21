@@ -50,7 +50,7 @@ class Signup extends Component {
 
   fetchUsers() {
     let userEmail = this.state.email.toLowerCase()
-    fetch('http://localhost:5000/api/users/')
+    fetch('/api/users/')
     .then((response) => response.json())
     .then((res) => {
       let existingUser = false

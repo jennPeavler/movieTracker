@@ -29374,7 +29374,7 @@
 	    value: function fetchFavorites(id) {
 	      var _this2 = this;
 	
-	      fetch('http://localhost:5000/api//users/' + id + '/favorites').then(function (response) {
+	      fetch('/api//users/' + id + '/favorites').then(function (response) {
 	        return response.json();
 	      }).then(function (res) {
 	        res.data.forEach(function (movie) {
@@ -29388,7 +29388,7 @@
 	    value: function fetchUsers(id) {
 	      var _this3 = this;
 	
-	      fetch('http://localhost:5000/api/users/').then(function (response) {
+	      fetch('/api/users/').then(function (response) {
 	        return response.json();
 	      }).then(function (res) {
 	        res.data.forEach(function (i) {
@@ -30513,7 +30513,7 @@
 	      var _this3 = this;
 	
 	      var userEmail = this.state.email.toLowerCase();
-	      fetch('http://localhost:5000/api/users/').then(function (response) {
+	      fetch('/api/users/').then(function (response) {
 	        return response.json();
 	      }).then(function (res) {
 	        var existingUser = false;
@@ -30679,7 +30679,7 @@
 	    value: function fetchUsers() {
 	      var _this2 = this;
 	
-	      fetch('http://localhost:5000/api/users/').then(function (response) {
+	      fetch('/api/users/').then(function (response) {
 	        return response.json();
 	      }).then(function (userData) {
 	        _this2.validateUser(userData);
@@ -30717,7 +30717,7 @@
 	    value: function fetchFavorites(userId) {
 	      var _this4 = this;
 	
-	      fetch("http://localhost:5000/api//users/" + userId + "/favorites").then(function (response) {
+	      fetch("/api//users/" + userId + "/favorites").then(function (response) {
 	        return response.json();
 	      }).then(function (res) {
 	        res.data.forEach(function (movie) {
@@ -30996,7 +30996,7 @@
 	"use strict";
 	
 	var fetchFavorites = function fetchFavorites(id, responseFunc) {
-	  fetch("http://localhost:5000/api//users/" + id + "/favorites").then(function (response) {
+	  fetch("/api//users/" + id + "/favorites").then(function (response) {
 	    return response.json();
 	  }).then(function (res) {
 	    responseFunc(id);

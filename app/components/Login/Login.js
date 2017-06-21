@@ -17,7 +17,7 @@ class Login extends Component {
   }
 
   fetchUsers() {
-    fetch('http://localhost:5000/api/users/')
+    fetch('/api/users/')
     .then( response => response.json() )
     .then( userData => {
       this.validateUser(userData)
@@ -48,7 +48,7 @@ class Login extends Component {
   }
 
   fetchFavorites (userId) {
-    fetch(`http://localhost:5000/api//users/${userId}/favorites`)
+    fetch(`/api//users/${userId}/favorites`)
     .then( response => response.json())
     .then( res => {
       res.data.forEach( movie => {
