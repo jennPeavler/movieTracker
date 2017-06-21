@@ -15,7 +15,7 @@ describe('log off functionality', () => {
   it('should log off if user selects yes to logging off', () => {
     const mockFn = jest.fn()
     const wrapper = mount(<LogOff handleUser={mockFn}
-                                  history={'http://localhost:5000/logoff'}
+                                  history={'/logoff'}
                                   handleClearFavorites={mockFn}/>)
     let storageMock = () => {
        return {
@@ -37,7 +37,7 @@ describe('log off functionality', () => {
   it('should not log off if user selects no to logging off', () => {
     const mockFn = jest.fn()
     const wrapper = mount(<LogOff handleUser={mockFn}
-                                  history={'http://localhost:5000/logoff'}
+                                  history={'/logoff'}
                                   handleClearFavorites={mockFn}/>)
     let storageMock = () => {
        return {
@@ -58,7 +58,7 @@ describe('log off functionality', () => {
   it('should route to home if user selects no to logging off', () => {
     const mockFn = jest.fn()
     let history = {
-      url: 'http://localhost:5000/logoff',
+      url: '/logoff',
       replace: function(url) {
         return this.url = url
       }
@@ -77,7 +77,7 @@ describe('log off functionality', () => {
      window.localStorage = storageMock()
      const logoffBtn = wrapper.find('.no')
 
-     expect(wrapper.props().history.url).toEqual('http://localhost:5000/logoff')
+     expect(wrapper.props().history.url).toEqual('/logoff')
      logoffBtn.simulate('click')
      expect(wrapper.props().history.url).toEqual('/')
   })
@@ -85,7 +85,7 @@ describe('log off functionality', () => {
   it('should route to home if user selects yes to logging off', () => {
     const mockFn = jest.fn()
     let history = {
-      url: 'http://localhost:5000/logoff',
+      url: '/logoff',
       replace: function(url) {
         return this.url=url
       }
@@ -104,7 +104,7 @@ describe('log off functionality', () => {
      window.localStorage = storageMock()
      const logoffBtn = wrapper.find('.no')
 
-     expect(wrapper.props().history.url).toEqual('http://localhost:5000/logoff')
+     expect(wrapper.props().history.url).toEqual('/logoff')
      logoffBtn.simulate('click')
      expect(wrapper.props().history.url).toEqual('/')
    })

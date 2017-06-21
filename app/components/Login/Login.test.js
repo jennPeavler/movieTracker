@@ -15,7 +15,7 @@ const newUserResponse = {
 }
 
 const mockCalls = () => {
-  fetchMock.get('http://localhost:5000/api/users', {
+  fetchMock.get('/api/users', {
     status: 200,
     ok: true,
     body: newUserResponse

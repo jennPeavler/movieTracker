@@ -1,5 +1,5 @@
 const fetchFavorites = (id, responseFunc) => {
-  fetch(`http://localhost:5000/api//users/${ id }/favorites`)
+  fetch(`/api//users/${ id }/favorites`)
   .then(response => response.json())
   .then(res => {
     responseFunc(id)

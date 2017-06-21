@@ -29,7 +29,7 @@ export default class App extends Component {
 
 
   fetchFavorites(id) {
-    fetch(`http://localhost:5000/api//users/${ id }/favorites`)
+    fetch(`/api//users/${ id }/favorites`)
     .then(response => response.json())
     .then(res => {
       res.data.forEach(movie => {
@@ -40,7 +40,7 @@ export default class App extends Component {
   }
 
   fetchUsers(id) {
-    fetch('http://localhost:5000/api/users/')
+    fetch('/api/users/')
     .then(response => response.json())
     .then(res => {
       res.data.forEach(i => {

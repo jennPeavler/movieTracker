@@ -5,7 +5,7 @@ var options = {
 };
 
 var pgp = require('pg-promise')(options);
-var connectionString = 'postgres://localhost:5432/users';
+var connectionString = process.env.DATABASE_URL;
 var db = pgp(connectionString);
 
 function getAllUsers(req, res, next) {
